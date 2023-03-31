@@ -1,0 +1,49 @@
+CURTAIN:
+Epigraph
+	"I stand amid the roar
+	Of a surf-tormented shore,
+	And I hold within my hand
+	Grains of the golden sand —
+
+	How few! yet how they creep
+	Through my fingers to the deep,
+	While I weep — while I weep!
+	
+	O God! Can I not grasp
+	Them with a tighter clasp?
+	O God! can I not save
+	One from the pitiless wave?
+	
+	Is all that we see or seem
+	But a dream within a dream?"
+Title Screen
+New Game
+	What is your name? (Karl)
+	What is this cat's name? (Siggy)
+
+PROLOGUE
+	Karl goes to sleep and is attacked in his dream by the Enemy. Siggy saves
+	him but is defeated in the process.
+	Upon waking, Siggy has disappeared.
+ACT I
+	The neighborhood is now explorable. Record Store, Gym, Studio
+	Gym - +A
+	Record Store - +B
+	Studio - +C
+	Home
+	
+	
+	Three dreams available:
+	BASEMENT
+		* Fight the Bone Demon in the wall
+			* BONE DEMON
+				* Bare Bones x 4
+				* Demon Skull x 1
+				* Hollow Ribcage x 1
+				
+			
+	PIRATES
+	
+	DRAGON
+	
+	

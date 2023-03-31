@@ -1,0 +1,6 @@
+thoughts on redolution:
+
+240 * 160 (15x10 tls) is the exact replica of the inspiration games here, but
+Nick has a fair point about presenting good fonts on larger screens.
+I'm interested in trying 320 * 240 (20 * 15 tls), which SotN ran at for the psx
+

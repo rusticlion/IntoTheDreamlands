@@ -1,0 +1,12 @@
+* Implement Effects:
+	* Check for Effects when calculating dice pool and on phase transitions
+		* Best way to implement Opulence?
+* Implement BP -> instinct card relationship: shouldn't list deck explicitly
+* scale resolution with intention, probably pillarboxes
+* Implement "Duel Piece" high level parent to encompass all body parts, cards,
+gadgets, and effects.
+	1. Define passthrough interface for intweractions at each game transition
+	2. Override as necessary with any "on x step" effects
+	3. Call these all at once in the DM by just calling the passthrough on every
+	Duel Piece. Should save the trouble of having bespoke calls to different types
+	in the DM at every state transition.

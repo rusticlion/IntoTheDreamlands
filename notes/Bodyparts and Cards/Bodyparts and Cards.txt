@@ -1,0 +1,248 @@
+HEADS
+
+Massive Eye
+Toughness: 1
+Blood: 10
+DREAD LASH/MOLLUSK MASH
+
+Cheshire Face
+Toughness: 2
+Blood: 10
+Mirror: When this is attacked, copy the attack die to the
+defense slot.
+BEHIND YOU/SMIRK
+
+Drake Head
+Toughness: 8
+Blood: 10
+BITE/FIRE BREATH
+
+Demon Skull
+Toughness: 5
+Blood: 5
+CURSE/PROPHET
+
+BODIES
+
+Fleshy Mantle
+Toughness: 3
+Blood: 5
+INK JET/BEAK BITE
+
+Broad Shoulders
+Toughness: 3
+Blood: 8
+BODY SLAM/AGILITY
+
+Hollow Ribcage
+Toughness: 4
+Blood: 2
+RISE AGAIN/BONE TOSS
+
+Jeweled Belly
+Toughness: 7
+Blood: 8
+[BP] gets -2 Toughness when wounded
+OPULENCE/ARMOR SLAM
+
+LIMBS
+
+Tentacle
+Toughness: *
+Blood: 2
+[BP] gets a random toughness 1-3 every turn
+WET SLAP/OCTOLOCK
+
+Bare Bones
+Toughness: 3
+Blood: 1
+BONE CRUSH/RATTLE
+
+Mantis Arm
+Toughness: 2
+Blood: 2
+POUNCE/POSTURE
+
+Beastly Claw
+Toughness: 5
+Blood: 2
+SAVAGE SLASH/SWIFT SLASH
+
+Leathery Wing
+Toughness: 4
+Blood: 1
+Paired: While you have two or more of these, gain [FLIGHT].
+SAVAGERY/DIVEBOMB
+
+
+* * *
+
+MOVES
+
+"Cephalo Smackdown" 003
+	DREAD LASH (B)
+	4A 4D
+	Gain B.
+	Flip if B > 1.
+
+	MOLLUSK MASH (B)
+	2A8 2D8
+	Lose all B.
+	Flip if B < G.
+
+"Tentacle Lashing" 002
+	WET SLAP (B)
+	(1+B)A (1+B)D
+	Gain B.
+	Flip if B > 1.
+	
+	OCTOLOCK (B)
+	1A8 1B8
+		Injuring with this deals [STUNNED]
+	Lose all B.
+	Flip if B < 1.
+	
+"Nothing Personnel" 005
+	SMIRK (C)
+	6D4
+		Gain [INVISIBLE].
+	Flip if [INVISIBLE].
+	
+	BEHIND YOU (C)
+	1B10
+		Brutal: Maims even healthy BPs.
+	Flip if not [INVISIBLE].
+		
+"Fire and Fang" 004
+	BITE (R)
+	2A 1D
+	Gain R.
+	Flip if B > R.
+	
+	FIRE BREATH (R)
+	3A 3R
+	Gain R.
+	Flip if R > B
+	
+"Speaking Demon" 006
+	CURSE (C)
+	1A 1R 1B
+		Injuring with this deals [DOOM]
+	Flip after using.
+	
+	PROPHET (C)
+	2B 2G
+	Gain [PROPHECY]
+	Flip if you have [PROPHECY].
+	
+"Squid Fu" 007
+	INK JET (G)
+	(G)D (G)B
+		Gain [INVISIBLE]
+	Convert G to B.
+	Flip if G < R
+	
+	BEAK BITE (R)
+	(R)A (R)B
+		Brutal
+	Convert R to B.
+	Flip if R < G
+	
+"Pankration" 008
+	BODY SLAM (R)
+	(1+R)A (1+G)D
+	Gain R.
+	Flip if G > R.
+	
+	JUDO FLIP (G)
+	3G5 1A6
+	Gain R.
+	Flip if R > G.
+	
+"Bone Dancer" 009
+	BONE TOSS (B)
+	2A6
+	Gain B.
+	Flip if B > 1.
+	
+	RISE AGAIN (B)
+	6D
+		Renew Limb: restore a random limb to Healthy. Heal its Blood.
+	Set B to 0.
+	Flip if B < 2.
+	
+"Hoard Beast" 010
+	GOLD SLAM (B)
+	(1+R)A (1+G)D
+	Gain B.
+	Flip if B > 1 and you don't have [SPLENDOR].
+	
+	OPULENCE (B)
+	Gain [SPLENDOR]
+	Set B to 0.
+	Flip if you have [SPLENDOR].
+	
+"Skeltal" 011
+	BONE CRUSH (R)
+	2A5 1R
+	Gain G.
+	Flip if G > R.
+	
+	RATTLE (G)
+	2D5 2G
+	Gain R.
+	Flip if R > G.
+
+"Mantis Style" 012
+	POSTURE (G)
+	3W 2G
+	Gain [MANTIS STYLE].
+	Flip if you have [MANTIS STYLE].
+	
+	POUNCE (G)
+	2A6 2G
+		Brutal
+	Lose [MANTIS STYLE].
+	Flip if you do not have [MANTIS STYLE].
+
+"Beast Cutting" 001
+	SAVAGE SLASH (R)
+	4A
+	Gain G.
+	Flip if G > R.
+		
+	SWIFT SLICE (G)
+	(2*G)A (2*G)D
+	Gain R.
+	Flip if R > G.
+	
+"Vicious Raptor" 013
+	SAVAGERY (R)
+	2R
+	Flip if you have [FLIGHT].
+	
+	DIVEBOMB (G)
+	3R 2G
+	Flip if you do not have [FLIGHT].
+	
+	
+* * *
+
+Effects
+	
+	FLIGHT: +2G
+
+	PROPHECY: +1B. If opponent has [DOOM], +1B* instead.
+
+	SPLENDOR: Immune to Attack dice. Cancelled if wounded.
+	
+	INVISIBLE: +5 to natural defense. Cancelled if wounded.
+	
+	MANTIS STYLE: You are death and death is always waiting.
+
+
+	STUNNED: You can't attack or defend with dice. Cancelled after one turn.
+	
+	DOOM: Something bad might happen. Place a 6 here to cancel it.
+
+
