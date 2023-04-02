@@ -1,19 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_bp002_massive_eye",
+  "name": "obj_card_012_mantis_style",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "head",
-    "path": "folders/Objects/bodyparts/head.yy",
+    "name": "cards",
+    "path": "folders/Objects/cards.yy",
   },
   "parentObjectId": {
-    "name": "obj_bodypart",
-    "path": "objects/obj_bodypart/obj_bodypart.yy",
+    "name": "obj_card",
+    "path": "objects/obj_card/obj_card.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_massive_eye",
-    "path": "sprites/spr_massive_eye/spr_massive_eye.yy",
+    "name": "spr_card_012_a_posture",
+    "path": "sprites/spr_card_012_a_posture/spr_card_012_a_posture.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -17,7 +17,11 @@ evaluate = function() {
 }
 
 damage = function() {
-	hp = clamp(hp-1, 0, 2);
+	var dph = 1;
+	if (controller.opponent.active_card.upside.brutal) {
+		dph += 1;
+	}
+	hp = clamp(hp-dph, 0, 2);
 	if (hp == 1) {
 		controller.blood -= 1;
 		image_blend = c_yellow;

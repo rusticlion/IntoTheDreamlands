@@ -270,16 +270,11 @@ translateBodyPartToTradeBlows = function(bodypart) {
 }
 
 //
-
+// an "effect index" is a valid object index for an Effect
 addEffect = function(effect_index) {
 	var effect_owner = self;
 	
-	var already_present = false; // effects don't stack
-	for(var i=0;i<array_length(effects);i++) {
-		if (effects[i].object_index == effect_index) {
-			already_present = true;	
-		}
-	}
+	already_present = hasEffect(effect_index);
 	if (already_present) {
 		show_debug_message("Tried to add an effect that is already present: doing nothing");;
 	} else {
@@ -288,6 +283,28 @@ addEffect = function(effect_index) {
 		show_debug_message(effects);
 		array_push(effects, new_effect);
 		translateEffects();
+	}
+}
+
+hasEffect = function(effect_index) {
+	var already_present = false; // effects don't stack
+	for(var i=0;i<array_length(effects);i++) {
+		if (effects[i].object_index == effect_index) {
+			already_present = true;	
+		}
+	}
+	return already_present;
+}
+
+removeEffect = function(effect_index) {
+	if (hasEffect(effect_index)) {
+		for(var i=0;i<array_length(effects);i++) {
+			if effects[i].object_index == effect_index {
+				effects[i].endEffect();
+			}
+		}
+	} else {
+		return false	
 	}
 }
 

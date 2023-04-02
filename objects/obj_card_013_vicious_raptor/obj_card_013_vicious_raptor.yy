@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_card_010_hoard_beast",
+  "name": "obj_card_013_vicious_raptor",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_card_010_a_gold_slam",
-    "path": "sprites/spr_card_010_a_gold_slam/spr_card_010_a_gold_slam.yy",
+    "name": "spr_card_013_a_savagery",
+    "path": "sprites/spr_card_013_a_savagery/spr_card_013_a_savagery.yy",
   },
   "spriteMaskId": null,
   "visible": true,

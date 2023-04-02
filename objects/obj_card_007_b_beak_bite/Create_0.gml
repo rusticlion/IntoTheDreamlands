@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
+
+brutal = true;
+
 getDice = function(controller = noone) {
 	var pool = [];
 	if (controller) {

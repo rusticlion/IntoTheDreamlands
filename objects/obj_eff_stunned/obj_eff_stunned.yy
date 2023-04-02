@@ -1,19 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_bp003_fleshy_mantle",
+  "name": "obj_eff_stunned",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "body",
-    "path": "folders/Objects/bodyparts/body.yy",
+    "name": "effects",
+    "path": "folders/Objects/effects.yy",
   },
   "parentObjectId": {
-    "name": "obj_bodypart",
-    "path": "objects/obj_bodypart/obj_bodypart.yy",
+    "name": "obj_effect",
+    "path": "objects/obj_effect/obj_effect.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bp_fleshy_mantle",
-    "path": "sprites/spr_bp_fleshy_mantle/spr_bp_fleshy_mantle.yy",
+    "name": "spr_effect_stunned",
+    "path": "sprites/spr_effect_stunned/spr_effect_stunned.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -22,7 +22,10 @@ obj_card_005_nothing_personnel,
 obj_card_006_speaking_demon,
 obj_card_007_squid_fu,
 obj_card_008_pankration,
-obj_card_009_bone_dancer
+obj_card_009_bone_dancer,
+obj_card_010_hoard_beast,
+obj_card_011_skeltal,
+obj_card_012_mantis_style
 ]
 
 global.gadget_index = [
@@ -36,7 +39,7 @@ player1_discard = [];
 player1_bodyparts = obj_player.getBody();
 player1_gadgets = obj_player.getGadgets();
 
-player2_cards = [9,9,9];
+player2_cards = [11,11,6,11,9,9];
 player2_discard = [];
 player2_bodyparts = [0, 0, 1, 2, 0, 0];
 
@@ -138,7 +141,10 @@ goToClash = function() {
 	}
 	obj_mouse_cursor.y -= 160;
 	
-	player1.translateDicePool();
+	if (!player1.hasEffect(obj_eff_stunned)) {
+		player1.translateDicePool();
+	}
+	
 	player2.translateDicePool();
 	for (i=0;i<array_length(player1.dice_pool);i++) {
 		player1.dice_pool[i].live = false;
@@ -152,7 +158,12 @@ goToClash = function() {
 	player1.translateBodyParts();
 	player2.translateBodyParts();
 	
-	player2.AIAssignDice();
+	player1.active_card.clashEffect();
+	player2.active_card.clashEffect();
+	
+	if (!player2.hasEffect(obj_eff_stunned)) {
+		player2.AIAssignDice();
+	}
 	
 }
 

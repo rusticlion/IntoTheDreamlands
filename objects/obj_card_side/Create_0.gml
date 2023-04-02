@@ -14,3 +14,5 @@ clashEffect = function(card) {
 cleanupEffect = function(card) {
 
 }
+
+brutal = false;

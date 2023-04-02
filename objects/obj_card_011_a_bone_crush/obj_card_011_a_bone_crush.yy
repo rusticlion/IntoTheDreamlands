@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_card_010_hoard_beast",
+  "name": "obj_card_011_a_bone_crush",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -12,8 +12,8 @@
     "path": "folders/Objects/cards.yy",
   },
   "parentObjectId": {
-    "name": "obj_card",
-    "path": "objects/obj_card/obj_card.yy",
+    "name": "obj_card_side",
+    "path": "objects/obj_card_side/obj_card_side.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -30,10 +30,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_card_010_a_gold_slam",
-    "path": "sprites/spr_card_010_a_gold_slam/spr_card_010_a_gold_slam.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

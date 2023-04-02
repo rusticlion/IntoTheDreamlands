@@ -4,10 +4,12 @@ accepts_input = true;
 image_speed = 0;
 win_count = 0;
 
-cards = [];
+cards = [12,12,12];
 
-repeat (3) {
-	array_push(cards, irandom(8)+1);
+randomizeDeck = function() {
+	repeat(6) {
+		array_push(cards, irandom(array_length(global.card_index)))	
+	}
 }
 
 bodyparts = [1,2,0,0,0,0];

@@ -1,15 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_bp001_tentacle",
+  "name": "obj_bp010_jeweled_belly",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "limb",
-    "path": "folders/Objects/bodyparts/limb.yy",
+    "name": "body",
+    "path": "folders/Objects/bodyparts/body.yy",
   },
   "parentObjectId": {
     "name": "obj_bodypart",
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bp_tentacle",
-    "path": "sprites/spr_bp_tentacle/spr_bp_tentacle.yy",
+    "name": "spr_bp_jeweled_belly",
+    "path": "sprites/spr_bp_jeweled_belly/spr_bp_jeweled_belly.yy",
   },
   "spriteMaskId": null,
   "visible": true,
