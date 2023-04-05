@@ -10,7 +10,7 @@ side_b = instance_create_layer(0,0, "Pieces", obj_card_006_b_prophet);
 
 upside = side_a;
 
-hover_text_a = "Burn and wither and rot and die.";
+hover_text_a = "Burn and wither and rot\nand die.";
 hover_text_b = "Your story is over.";
 
 hover_text = hover_text_a;

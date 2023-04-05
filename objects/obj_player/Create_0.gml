@@ -4,14 +4,39 @@ accepts_input = true;
 image_speed = 0;
 win_count = 0;
 
-randomizeDeck = function() {
-	repeat(6) {
-		array_push(cards, irandom(array_length(global.card_index)))	
-	}
-}
-
 bodyparts = [6,8,12,12,1,1];
-gadgets = [3,7,5];
+gadgets = [
+	{
+		xx: 1*global.tile_size,
+		yy: 20*global.tile_size,
+		gadget_index: 4
+	},
+	{
+		xx: 1*global.tile_size,
+		yy: 22*global.tile_size,
+		gadget_index: 5
+	},
+	{
+		xx: 1*global.tile_size,
+		yy: 24*global.tile_size,
+		gadget_index: 6
+	},
+	{
+		xx: 2*global.tile_size,
+		yy: 20*global.tile_size,
+		gadget_index: 7
+	},
+	{
+		xx: 2*global.tile_size,
+		yy: 22*global.tile_size,
+		gadget_index: 8
+	},
+	{
+		xx: 2*global.tile_size,
+		yy: 24*global.tile_size,
+		gadget_index: 9
+	},
+];
 
 getDeck = function() {
 	return array_shuffle(bodyparts);	

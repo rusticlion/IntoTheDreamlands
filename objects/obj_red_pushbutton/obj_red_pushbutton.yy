@@ -12,8 +12,8 @@
     "path": "folders/Objects/gadgets.yy",
   },
   "parentObjectId": {
-    "name": "obj_injector",
-    "path": "objects/obj_injector/obj_injector.yy",
+    "name": "obj_pushbutton",
+    "path": "objects/obj_pushbutton/obj_pushbutton.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_oneway_pushbutton",
-    "path": "sprites/spr_oneway_pushbutton/spr_oneway_pushbutton.yy",
+    "name": "spr_big_pushbutton",
+    "path": "sprites/spr_big_pushbutton/spr_big_pushbutton.yy",
   },
   "spriteMaskId": null,
   "visible": true,

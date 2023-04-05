@@ -11,8 +11,38 @@ evaluate = function() {
 		// do whatever "dead" callbacks
 	
 	// note the assumption here that slots exist if hp > 0
-	} else if (attack_slot.power_score > defense_slot.difficulty) {
-		damage();
+	} else {
+		var attack_score = attack_slot.power_score;
+		var defense_score = defense_slot.difficulty;
+		
+		if (attack_score > 19) {
+			attack_score = "HYPER";
+		} else if (attack_score > 9) {
+			attack_score = "SUPER";
+		}
+		
+		if (defense_score > 19) {
+			defense_score = "HYPER";
+		} else if (defense_score > 9) {
+			defense_score = "SUPER";
+		}
+		
+		
+		if (defense_score == "HYPER") {
+			deflect();
+		} else if (attack_score == "HYPER") {
+			damage();
+		} else if (defense_score == "SUPER") {
+			deflect();
+		} else if (attack_score == "SUPER") {
+			damage();
+		} else if (attack_score > defense_score) {
+			damage();	
+		} else if (attack_score > 0) {
+			deflect();	
+		} else {
+			notAttacked();
+		}
 	}
 }
 
@@ -31,6 +61,14 @@ damage = function() {
 		instance_destroy(attack_slot);
 		instance_destroy(defense_slot);
 	}
+	
+}
+
+deflect = function() {
+	
+}
+
+notAttacked = function() {
 	
 }
 

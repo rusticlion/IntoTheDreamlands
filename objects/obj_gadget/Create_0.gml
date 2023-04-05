@@ -5,3 +5,7 @@ event_inherited();
 if (!owner) {
 	owner = noone;
 }
+
+reset = function() {
+	// passthrough, implement for gadgets
+}

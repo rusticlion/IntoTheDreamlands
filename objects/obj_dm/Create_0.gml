@@ -41,6 +41,7 @@ obj_card_013_vicious_raptor
 ]
 
 global.gadget_index = [
+obj_gadget,
 obj_red_lever,
 obj_green_lever,
 obj_blue_lever,
@@ -50,6 +51,9 @@ obj_blue_injector,
 obj_red_pushbutton,
 obj_green_pushbutton,
 obj_blue_pushbutton,
+obj_red_catalyst_crystal,
+obj_green_catalyst_crystal,
+obj_blue_catalyst_crystal
 ]
 
 
@@ -67,6 +71,7 @@ player1_gadgets = obj_player.getGadgets();
 player2_cards = player2.getDeck(player2.name); // gets ai duelist logic for particular opponent
 player2_discard = [];
 player2_bodyparts = player2.getBody(player2.name);
+player2_gadgets = player2.getGadgets(player2.name);
 
 player1.opponent = player2;
 player2.opponent = player1;
@@ -109,11 +114,32 @@ for (var i = 0; i < 6; i+=1) { // magic number 6 is BP count
 gadgets = [];
 
 for (var i = 0; i<array_length(player1_gadgets);i++) { //not even programming, do real gadgets later
-	next_gadget = instance_create_layer(16, 320+(32*i), "Pieces", global.gadget_index[player1_gadgets[i]], {owner: player1})
+	var gadget_data = player1_gadgets[i];
+	next_gadget = instance_create_layer(
+		gadget_data.xx,
+		gadget_data.yy,
+		"Pieces",
+		global.gadget_index[gadget_data.gadget_index],
+		{owner: player1}
+	)
+	array_push(gadgets, next_gadget);
+}
+
+for (var i = 0; i<array_length(player2_gadgets);i++) { //not even programming, do real gadgets later
+	var gadget_data = player2_gadgets[i];
+	next_gadget = instance_create_layer(
+		gadget_data.xx,
+		gadget_data.yy,
+		"Pieces",
+		global.gadget_index[gadget_data.gadget_index],
+		{owner: player2}
+	)
 	array_push(gadgets, next_gadget);
 }
 
 instance_create_layer(112, 320, "Pieces", obj_go_btn);
+// Func declarations
+// Main game loop: DRAW, PLAN, CLASH, RESULTS, CLEANUP, repeat
 
 goToDraw = function() {
 	phase = "DRAW";
@@ -140,20 +166,25 @@ goToDraw = function() {
 	player1.refreshDicePool();
 	player2.refreshDicePool();
 	// any other (blocking?) draw phase stuff?
+	
 	goToPlan();
 }
 
 goToPlan = function() {
-	player1.energy = 1;
-	player2.energy = 1;
 	for(var i=0;i<array_length(gadgets);i++){
 		gadgets[i].reset();
+		gadgets[i].endOfDrawPhaseEffect();
 	}
-	
+	player1.energy = 1;
+	player2.energy = 1;
 	phase = "PLAN";
 }
 
 goToClash = function() {
+	for(var i=0;i<array_length(gadgets);i++){
+		gadgets[i].reset();
+		gadgets[i].endOfPlanPhaseEffect();
+	}
 	phase = "CLASH";
 	game_view = "clash";
 	var _cameraman = instance_nearest(x, y, obj_camera_controller);
@@ -182,6 +213,8 @@ goToClash = function() {
 	player1.active_card.clashEffect();
 	player2.active_card.clashEffect();
 	
+	// This is just the AI playing its turn, not phase
+	// transition logic
 	if (!player2.hasEffect(obj_eff_stunned)) {
 		player2.AIAssignDice_BasicRandom();
 	}
@@ -243,21 +276,16 @@ goToCleanup = function() {
 }
 
 goToLoss = function() {
-	obj_debug_duck.visible = true;
-	obj_debug_duck.debugMessage = "LOSE...";
 }
 
 goToTie = function() {
-	obj_debug_duck.visible = true;
-	obj_debug_duck.debugMessage = "TIE";
 }
 
 goToWin = function() {
-	obj_debug_duck.visible = true;
 	obj_player.win_count++;
-	obj_debug_duck.debugMessage = obj_player.win_count;
 	
 	phase = "WIN";
 }
 
+// start the duel!
 goToDraw();

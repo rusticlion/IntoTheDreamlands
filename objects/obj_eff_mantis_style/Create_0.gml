@@ -2,6 +2,8 @@
 // You can write your code in this editor
 event_inherited();
 
+hover_text = "Mantis waits.";
+
 endEffect = function() {
 	var isNotMe = function(_el, _idx) {
 		return _el.object_index != obj_eff_mantis_style;

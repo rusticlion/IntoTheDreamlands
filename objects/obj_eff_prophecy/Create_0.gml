@@ -1,12 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-show_debug_message("added a Prophecy effect")
+hover_text = "Prophetic knowledge\ngrants 1 mystic die"
 
 modifyDicePool = function(pool) {
 	if owner.opponent.doomed() {
 		extra_b_die = instance_create_layer(0,0,"Pieces",obj_blue_die,{live: false, shows: 10});
 	} else {
+		hover_text = "Doom has come.";
 		extra_b_die = instance_create_layer(0,0,"Pieces",obj_blue_die);
 	}
 	

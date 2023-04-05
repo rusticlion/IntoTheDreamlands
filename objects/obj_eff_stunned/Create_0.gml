@@ -2,6 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 has_passed = false
+hover_text = "Stunned! Can't use\n dice this turn.";
 
 // lasts one turn
 cleanupEffect = function() {

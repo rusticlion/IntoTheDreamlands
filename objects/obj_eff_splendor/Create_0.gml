@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
+hover_text = "Splendor grants\nindifference to the\nmundane."
 
 for(var i=0;i<array_length(owner.bodyparts);i++) {
 	owner.bodyparts[i].switchOnSplendor();

@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_oneway_pushbutton",
-    "path": "sprites/spr_oneway_pushbutton/spr_oneway_pushbutton.yy",
+    "name": "spr_injector",
+    "path": "sprites/spr_injector/spr_injector.yy",
   },
   "spriteMaskId": null,
   "visible": true,

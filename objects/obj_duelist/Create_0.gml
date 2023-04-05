@@ -323,15 +323,33 @@ translateEffects = function() {
 }
 
 modify_r_factor = function(delta) {
-	r_factor = clamp(r_factor+delta, 0, r_ceiling);
+	var val_before_request = r_factor;
+	r_factor = clamp(val_before_request+delta, 0, r_ceiling);
+	if (r_factor != val_before_request) {
+		return true;	
+	} else {
+		return false;	
+	}
 }
 
 modify_g_factor = function(delta) {
-	g_factor = clamp(g_factor+delta, 0, g_ceiling);
+	var val_before_request = g_factor;
+	g_factor = clamp(val_before_request+delta, 0, g_ceiling);
+	if (g_factor != val_before_request) {
+		return true;	
+	} else {
+		return false;	
+	}
 }
 
 modify_b_factor = function(delta) {
-	b_factor = clamp(b_factor+delta, 0, b_ceiling);
+	var val_before_request = b_factor;
+	b_factor = clamp(val_before_request+delta, 0, b_ceiling);
+	if (b_factor != val_before_request) {
+		return true;	
+	} else {
+		return false;	
+	}
 }
 
 resetDiceModifiers = function() {

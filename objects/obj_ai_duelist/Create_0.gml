@@ -2,6 +2,23 @@
 // You can write your code in this editor
 event_inherited();
 body = [11,11,11,11,11,11]
+gadgets = [
+	{
+		xx: 13*global.tile_size,
+		yy: 4*global.tile_size,
+		gadget_index: 10
+	},
+	{
+		xx: 13*global.tile_size,
+		yy: 6*global.tile_size,
+		gadget_index: 11
+	},
+	{
+		xx: 13*global.tile_size,
+		yy: 8*global.tile_size,
+		gadget_index: 12
+	}
+]
 
 getBody = function(ai_opponent) {
 	switch (ai_opponent)
@@ -30,6 +47,20 @@ getBody = function(ai_opponent) {
 		
 	}
 	return body;
+}
+
+getGadgets = function(ai_opponent) {
+	switch (ai_opponent)
+	{
+		case "DRAGON":
+
+		break;
+		default:
+			
+		break;
+		
+	}
+	return gadgets;
 }
 
 getDeck = function(ai_opponent) {
