@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_card_010_a_gold_slam",
-    "path": "sprites/spr_card_010_a_gold_slam/spr_card_010_a_gold_slam.yy",
+    "name": "spr_card_011_a_bone_crush",
+    "path": "sprites/spr_card_011_a_bone_crush/spr_card_011_a_bone_crush.yy",
   },
   "spriteMaskId": null,
   "visible": true,

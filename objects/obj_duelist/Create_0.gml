@@ -48,13 +48,13 @@ refreshDicePool = function() {
 	dice_pool = card_pool;
 	
 	// additional dice from gadgets
-	repeat (r_factor) {
+	repeat (r_dice_modifier) {
 		array_push(dice_pool, instance_create_layer(0,0,"Pieces", obj_red_die, {owner: self}));
 	}
-	repeat (g_factor) {
+	repeat (g_dice_modifier) {
 		array_push(dice_pool, instance_create_layer(0,0,"Pieces", obj_green_die, {owner: self}));
 	}
-	repeat (b_factor) {
+	repeat (b_dice_modifier) {
 		array_push(dice_pool, instance_create_layer(0,0,"Pieces", obj_blue_die, {owner: self}));
 	}
 	
@@ -332,6 +332,12 @@ modify_g_factor = function(delta) {
 
 modify_b_factor = function(delta) {
 	b_factor = clamp(b_factor+delta, 0, b_ceiling);
+}
+
+resetDiceModifiers = function() {
+	r_dice_modifier = 0;
+	g_dice_modifier = 0;
+	b_dice_modifier = 0;
 }
 
 doomed = function() {

@@ -7,9 +7,20 @@ phase = "SETUP";
 game_view = "home";
 
 global.bodypart_index = [
-obj_bp001_tentacle,
-obj_bp002_massive_eye,
-obj_bp003_fleshy_mantle
+obj_bodypart,
+obj_bp001_beast_claw,
+obj_bp002_tentacle,
+obj_bp003_massive_eye,
+obj_bp004_drake_head,
+obj_bp005_cheshire_face,
+obj_bp006_demon_skull,
+obj_bp007_fleshy_mantle,
+obj_bp008_broad_shoulders,
+obj_bp009_hollow_ribcage,
+obj_bp010_jeweled_belly,
+obj_bp011_bare_bones,
+obj_bp012_mantis_arm,
+obj_bp013_leathery_wing
 ]
 
 global.card_index = [
@@ -25,27 +36,37 @@ obj_card_008_pankration,
 obj_card_009_bone_dancer,
 obj_card_010_hoard_beast,
 obj_card_011_skeltal,
-obj_card_012_mantis_style
+obj_card_012_mantis_style,
+obj_card_013_vicious_raptor
 ]
 
 global.gadget_index = [
 obj_red_lever,
 obj_green_lever,
-obj_blue_lever
+obj_blue_lever,
+obj_red_injector,
+obj_green_injector,
+obj_blue_injector,
+obj_red_pushbutton,
+obj_green_pushbutton,
+obj_blue_pushbutton,
 ]
+
+
+player1 = instance_create_layer(0,0,"Pieces",obj_duelist);
+player1.name = "LionBots";
+player2 = instance_create_layer(0,0,"Pieces",obj_ai_duelist);
+foes = ["CHESHIRE LION", "DRAGON", "MANTIS SENSEI", "BONE DEMON", "TREASURE WIGHT", "BONE GARGOYLE"];
+player2.name = foes[irandom(5)];
 
 player1_cards = obj_player.getDeck();
 player1_discard = [];
 player1_bodyparts = obj_player.getBody();
 player1_gadgets = obj_player.getGadgets();
 
-player2_cards = [11,11,6,11,9,9];
+player2_cards = player2.getDeck(player2.name); // gets ai duelist logic for particular opponent
 player2_discard = [];
-player2_bodyparts = [0, 0, 1, 2, 0, 0];
-
-player1 = instance_create_layer(0,0,"Pieces",obj_duelist);
-player1.name = "LionBots";
-player2 = instance_create_layer(0,0,"Pieces",obj_duelist);
+player2_bodyparts = player2.getBody(player2.name);
 
 player1.opponent = player2;
 player2.opponent = player1;
@@ -162,7 +183,7 @@ goToClash = function() {
 	player2.active_card.clashEffect();
 	
 	if (!player2.hasEffect(obj_eff_stunned)) {
-		player2.AIAssignDice();
+		player2.AIAssignDice_BasicRandom();
 	}
 	
 }
@@ -214,6 +235,8 @@ goToCleanup = function() {
 	instance_destroy(player1.next_card);
 	instance_destroy(player2.active_card);
 	instance_destroy(player2.next_card);
+	player1.resetDiceModifiers();
+	player2.resetDiceModifiers();
 	if (phase != "WIN") {
 		goToDraw();
 	}
@@ -231,7 +254,9 @@ goToTie = function() {
 
 goToWin = function() {
 	obj_debug_duck.visible = true;
-	obj_debug_duck.debugMessage = "WIN!";
+	obj_player.win_count++;
+	obj_debug_duck.debugMessage = obj_player.win_count;
+	
 	phase = "WIN";
 }
 

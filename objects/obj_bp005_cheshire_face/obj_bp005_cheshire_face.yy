@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_massive_eye",
-    "path": "sprites/spr_massive_eye/spr_massive_eye.yy",
+    "name": "spr_bp_cheshire_face",
+    "path": "sprites/spr_bp_cheshire_face/spr_bp_cheshire_face.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -7,7 +7,7 @@ if (live && needsNextFace) {
 }
 
 
-if ((target_value != shows) && needsNextFace) {
+if ((target_value != shows) && (needsNextFace && !live)) {
 	needsNextFace = false;
 	alarm[0] = 4;
 	if (target_value < shows) {

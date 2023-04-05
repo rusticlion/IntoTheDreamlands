@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bp_broad_shoulders",
-    "path": "sprites/spr_bp_broad_shoulders/spr_bp_broad_shoulders.yy",
+    "name": "spr_bp_hollow_ribcage",
+    "path": "sprites/spr_bp_hollow_ribcage/spr_bp_hollow_ribcage.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bp_fleshy_mantle",
-    "path": "sprites/spr_bp_fleshy_mantle/spr_bp_fleshy_mantle.yy",
+    "name": "spr_bp_broad_shoulders",
+    "path": "sprites/spr_bp_broad_shoulders/spr_bp_broad_shoulders.yy",
   },
   "spriteMaskId": null,
   "visible": true,
