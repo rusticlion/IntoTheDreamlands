@@ -6,6 +6,8 @@ var acceptance = false;
 
 if (slot != noone) {
 	acceptance = slot.apply(self)
+} else {
+	show_debug_message("didn't find a slot for the die");	
 }
 
 if (!acceptance) {

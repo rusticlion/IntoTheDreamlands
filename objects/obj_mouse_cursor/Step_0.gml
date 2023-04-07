@@ -21,6 +21,8 @@ switch(obj_dm.game_view) {
 	break;
 }
 
+// incremental kb movement
+/*
 if (ready) {
 	if keyboard_check(vk_right) {
 		readyTimer();
@@ -40,7 +42,11 @@ if (ready) {
 		}
 	else {
 		}
-}
+}*/
+
+// mouse control
+x = mouse_x;
+y = mouse_y;
 
 if !(holding == "empty") {
 	holding.x = x;

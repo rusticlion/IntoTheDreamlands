@@ -20,8 +20,8 @@ apply = function(die) {
 	
 	die.lock();
 	die.image_angle = 45;
-	die.y += 8;
-	die.x += 1;
+	die.y = y+8;
+	die.x = x;
 	updated_difficulty = difficulty + die.shows;
 	die.updateValue(updated_difficulty);
 	difficulty = updated_difficulty;

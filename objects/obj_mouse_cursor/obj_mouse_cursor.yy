@@ -8,6 +8,7 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":90,"eventType":10,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":7,"eventType":6,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -36,8 +37,8 @@
     "path": "sprites/spr_mouse_cursor/spr_mouse_cursor.yy",
   },
   "spriteMaskId": {
-    "name": "spr_tile_mask",
-    "path": "sprites/spr_tile_mask/spr_tile_mask.yy",
+    "name": "spr_top_left_mask",
+    "path": "sprites/spr_top_left_mask/spr_top_left_mask.yy",
   },
   "visible": true,
 }

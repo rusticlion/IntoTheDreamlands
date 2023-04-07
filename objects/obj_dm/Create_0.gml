@@ -60,8 +60,8 @@ obj_blue_catalyst_crystal
 player1 = instance_create_layer(0,0,"Pieces",obj_duelist);
 player1.name = "LionBots";
 player2 = instance_create_layer(0,0,"Pieces",obj_ai_duelist);
-foes = ["CHESHIRE LION", "DRAGON", "MANTIS SENSEI", "BONE DEMON", "TREASURE WIGHT", "BONE GARGOYLE"];
-player2.name = foes[irandom(5)];
+foes = ["CHESHIRE LION", "DRAGON", "MANTIS SENSEI", "BONE DEMON", "TREASURE WIGHT", "BONE GARGOYLE", "KRAKEN"];
+player2.name = foes[irandom(6)];
 
 player1_cards = obj_player.getDeck();
 player1_discard = [];
@@ -216,7 +216,8 @@ goToClash = function() {
 	// This is just the AI playing its turn, not phase
 	// transition logic
 	if (!player2.hasEffect(obj_eff_stunned)) {
-		player2.AIAssignDice_BasicRandom();
+		player2.alarm[0] = 15;
+		player2.AIAssignDice_DefendHeadAndBody();
 	}
 	
 }
@@ -270,20 +271,25 @@ goToCleanup = function() {
 	instance_destroy(player2.next_card);
 	player1.resetDiceModifiers();
 	player2.resetDiceModifiers();
-	if (phase != "WIN") {
+	if (phase != "WIN" && phase != "LOSS" && phase != "TIE") {
 		goToDraw();
 	}
 }
 
 goToLoss = function() {
+	obj_player.win_count = 0;
+	obj_player.dreamform = "BEAST MAN";
+	obj_player.dreamforms_unlocked = ["BEAST MAN"];
+	phase = "LOSS";
 }
 
 goToTie = function() {
+	phase = "TIE";
 }
 
 goToWin = function() {
 	obj_player.win_count++;
-	
+	obj_player.registerWin(player2.name);
 	phase = "WIN";
 }
 

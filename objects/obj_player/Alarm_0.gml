@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Finish action
 // You can write your code in this editor
 accepts_input = true
 speed = 0

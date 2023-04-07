@@ -3,8 +3,10 @@
 accepts_input = true;
 image_speed = 0;
 win_count = 0;
+dreamforms_unlocked = ["BEAST MAN"];
+dreamform = "BEAST MAN";
 
-bodyparts = [6,8,12,12,1,1];
+bodyparts = [4,8,1,1,1,1];
 gadgets = [
 	{
 		xx: 1*global.tile_size,
@@ -38,14 +40,36 @@ gadgets = [
 	},
 ];
 
+lock = function() {
+	accepts_input = false;	
+}
+
+unlock = function() {
+	accepts_input = true;	
+}
+
 getDeck = function() {
+	bodyparts = obj_ai_duelist.getBody(dreamform);
 	return array_shuffle(bodyparts);	
 }
 
 getBody = function() {
+	bodyparts = obj_ai_duelist.getBody(dreamform);
 	return bodyparts;	
 }
 
 getGadgets = function() {
 	return gadgets;	
+}
+
+registerWin = function(opp_name) {
+	var already_unlocked = false;
+	for (var i=0;i<array_length(dreamforms_unlocked);i++) {
+		if (opp_name == dreamforms_unlocked[i]) {
+			already_unlocked = true;
+		}
+	}
+	if (!already_unlocked) {
+		array_push(dreamforms_unlocked, opp_name);
+	}
 }
