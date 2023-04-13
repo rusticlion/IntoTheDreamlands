@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "combat",
+    "path": "folders/Objects/combat.yy",
   },
   "parentObjectId": null,
   "persistent": false,

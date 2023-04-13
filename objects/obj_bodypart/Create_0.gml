@@ -88,11 +88,16 @@ spawnSlots = function() {
 }
 
 switchOnSplendor = function() {
-	attack_slot.activateSplendor();	
+	if hp>0 {
+		attack_slot.activateSplendor();
+	}
+		
 }
 
 switchOffSplendor = function() {
-	attack_slot.deactivateSplendor();	
+	if hp>0 {
+		attack_slot.deactivateSplendor();
+	}
 }
 
 respawnBodypart = function() {

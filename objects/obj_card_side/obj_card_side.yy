@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "cards",
-    "path": "folders/Objects/cards.yy",
+    "path": "folders/Objects/combat/cards.yy",
   },
   "parentObjectId": null,
   "persistent": false,

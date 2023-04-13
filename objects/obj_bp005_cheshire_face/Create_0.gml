@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-hover_text = "CHESHIRE FACE"
+hover_text = "CHESHIRE FACE\n10 blood"
 blood_value = 10;
 toughness = 2;
 

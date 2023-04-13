@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this edito
-hover_text = "JEWELED BELLY"
+hover_text = "JEWELED BELLY\n8 blood"
 blood_value = 8;
 toughness = 7;
 

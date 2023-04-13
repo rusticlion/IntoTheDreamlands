@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "managers",
-    "path": "folders/Objects/managers.yy",
+    "name": "title_screen",
+    "path": "folders/Objects/title_screen.yy",
   },
   "parentObjectId": null,
   "persistent": true,

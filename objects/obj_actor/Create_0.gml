@@ -10,7 +10,7 @@ ready = true;
 
 // currently taking an action
 acting = false;
-image_speed = 0;
+image_speed = 1;
 sprite_index = idle;
 
 cooldown = function(){

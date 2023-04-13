@@ -2,7 +2,7 @@
 // You can write your code in this editor
 ready = true;
 cursor = 0;
-items = obj_player.dreamforms_unlocked;
+items = global.dreamforms_unlocked;
 
 readyTimer = function() {
 	ready = false;

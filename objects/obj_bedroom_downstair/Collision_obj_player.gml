@@ -4,7 +4,7 @@ if live {
 	instance_create_layer(0, 112, "Overlay", obj_btm_dialog_box,
 	{
 		texts: [
-			"It's late...\nbetter get to bed."
+			"It's late, "+global.playername+"!\nBetter get to bed."
 		]
 	}
 );

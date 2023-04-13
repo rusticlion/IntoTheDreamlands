@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "cards",
-    "path": "folders/Objects/cards.yy",
+    "path": "folders/Objects/combat/cards.yy",
   },
   "parentObjectId": {
     "name": "obj_hoverable",

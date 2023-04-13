@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-hover_text = "MANTIS ARM"
+hover_text = "MANTIS ARM\n2 blood"
 blood_value = 2;
 toughness = 2;
 

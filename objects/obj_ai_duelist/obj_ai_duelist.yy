@@ -10,7 +10,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "managers",
-    "path": "folders/Objects/managers.yy",
+    "path": "folders/Objects/combat/managers.yy",
   },
   "parentObjectId": {
     "name": "obj_duelist",

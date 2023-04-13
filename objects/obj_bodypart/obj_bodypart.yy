@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "bodyparts",
-    "path": "folders/Objects/bodyparts.yy",
+    "path": "folders/Objects/combat/bodyparts.yy",
   },
   "parentObjectId": {
     "name": "obj_hoverable",

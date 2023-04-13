@@ -3,7 +3,6 @@
 accepts_input = true;
 image_speed = 0;
 win_count = 0;
-dreamforms_unlocked = ["BEAST MAN"];
 dreamform = "BEAST MAN";
 
 bodyparts = [4,8,1,1,1,1];
@@ -64,12 +63,12 @@ getGadgets = function() {
 
 registerWin = function(opp_name) {
 	var already_unlocked = false;
-	for (var i=0;i<array_length(dreamforms_unlocked);i++) {
-		if (opp_name == dreamforms_unlocked[i]) {
+	for (var i=0;i<array_length(global.dreamforms_unlocked);i++) {
+		if (opp_name == global.dreamforms_unlocked[i]) {
 			already_unlocked = true;
 		}
 	}
 	if (!already_unlocked) {
-		array_push(dreamforms_unlocked, opp_name);
+		array_push(global.dreamforms_unlocked, opp_name);
 	}
 }

@@ -61,7 +61,19 @@ player1 = instance_create_layer(0,0,"Pieces",obj_duelist);
 player1.name = "LionBots";
 player2 = instance_create_layer(0,0,"Pieces",obj_ai_duelist);
 foes = ["CHESHIRE LION", "DRAGON", "MANTIS SENSEI", "BONE DEMON", "TREASURE WIGHT", "BONE GARGOYLE", "KRAKEN"];
-player2.name = foes[irandom(6)];
+player2.name = noone;
+while (player2.name == noone) {
+	var candidate = foes[irandom(6)];
+	var already_fought = false;
+	for (var i=0;i<array_length(global.dreamforms_unlocked);i++) {
+		if (candidate == global.dreamforms_unlocked[i]) {
+			already_fought = true;
+		}
+	}
+	if (!already_fought) {
+		player2.name = candidate;	
+	}
+}
 
 player1_cards = obj_player.getDeck();
 player1_discard = [];
@@ -279,18 +291,24 @@ goToCleanup = function() {
 goToLoss = function() {
 	obj_player.win_count = 0;
 	obj_player.dreamform = "BEAST MAN";
-	obj_player.dreamforms_unlocked = ["BEAST MAN"];
+	global.dreamforms_unlocked = ["BEAST MAN"];
 	phase = "LOSS";
+	Save("player1");
 }
 
 goToTie = function() {
 	phase = "TIE";
+	Save("player1");
 }
 
 goToWin = function() {
 	obj_player.win_count++;
 	obj_player.registerWin(player2.name);
+	if (obj_player.win_count >= array_length(foes)) {
+		obj_player.win_count = "WIN!";	
+	}
 	phase = "WIN";
+	Save("player1");
 }
 
 // start the duel!

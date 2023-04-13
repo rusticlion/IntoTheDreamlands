@@ -11,7 +11,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "gadgets",
-    "path": "folders/Objects/gadgets.yy",
+    "path": "folders/Objects/combat/gadgets.yy",
   },
   "parentObjectId": {
     "name": "obj_gadget",

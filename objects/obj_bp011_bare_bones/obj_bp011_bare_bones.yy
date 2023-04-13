@@ -9,7 +9,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "limb",
-    "path": "folders/Objects/bodyparts/limb.yy",
+    "path": "folders/Objects/combat/bodyparts/limb.yy",
   },
   "parentObjectId": {
     "name": "obj_bodypart",
