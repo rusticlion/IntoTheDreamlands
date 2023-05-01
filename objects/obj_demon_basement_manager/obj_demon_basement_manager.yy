@@ -1,13 +1,15 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_popup_menu",
-  "eventList": [],
+  "name": "obj_demon_basement_manager",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "world",
-    "path": "folders/Objects/world.yy",
+    "name": "DemonBasement",
+    "path": "folders/Objects/world/DemonBasement.yy",
   },
   "parentObjectId": null,
   "persistent": false,

@@ -1,9 +1,36 @@
 /// @description Insert description here
 // You can write your code in this editor
-accepts_input = true;
+moving = false;
+momentum = 0;
 image_speed = 0;
 win_count = 0;
 dreamform = "BEAST MAN";
+equipped_item = noone;
+
+facing_tile_x = x;
+facing_tile_y = y+16;
+
+switch(global.player_sprite) {
+	case 0:
+		left_sprite = spr_player_walkleft;
+		right_sprite = spr_player_walkright;
+		down_sprite = spr_player_walkdown;
+		up_sprite = spr_player_walkup;
+	break;
+	case 1:
+		left_sprite = spr_player_2_walkleft;
+		right_sprite = spr_player_2_walkright;
+		down_sprite = spr_player_2_walkdown;
+		up_sprite = spr_player_2_walkup;
+	break;
+	default:
+		left_sprite = spr_debug_duck;
+		right_sprite = spr_debug_duck;
+		down_sprite = spr_debug_duck;
+		up_sprite = spr_debug_duck;
+	break;
+}
+sprite_index = down_sprite;
 
 bodyparts = [4,8,1,1,1,1];
 gadgets = [
@@ -39,12 +66,20 @@ gadgets = [
 	},
 ];
 
-lock = function() {
-	accepts_input = false;	
-}
+global.items = [
+	"DEVIL'S BRUSH",
+	"SHOVEL",
+	"BOLT CUTTERS",
+	"BLINDFOLD",
+	"WRENCH",
+	"KEY"
+]
 
+lock = function() {
+	moving = true;
+}
 unlock = function() {
-	accepts_input = true;	
+	moving = false;	
 }
 
 getDeck = function() {
@@ -72,3 +107,4 @@ registerWin = function(opp_name) {
 		array_push(global.dreamforms_unlocked, opp_name);
 	}
 }
+

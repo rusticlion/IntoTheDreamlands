@@ -1,2 +1,2 @@
-/// @description Player click event
-// You can write your code in this editor
+/// @description Overwrite with actor behavior
+// on overworld interaction from player

@@ -1,0 +1,133 @@
+Actors:
+
+	Pipe 1
+	Text:
+		You can see water
+		flowing fast.
+		
+	Pipe 2:
+	Text:
+		You can see water
+		flowing fast. There
+		is a small leak.
+		(Water rushes cold,
+		clear - and salty.)
+	If (WRENCH)
+	Options:
+		Open hatch
+	If (MINI and OPEN)
+		Dive in
+			Dream Door -> Undersea
+		
+	Pipe 3:	
+	Text:
+		You can see water
+		flowing fast. Hey,
+		there's something
+		
+		under the pipe!
+			Gain SHOVEL
+			
+	Dig Spot 1:
+	Text:
+		Something is buried
+		in the wall...
+		
+		It attacks!
+			Combat: MOLEMAN
+		
+	Dig Spot 2:
+	Text:
+		Something is buried
+		in the wall...
+		
+		It attacks!
+			Combat: BONE DEMON
+		
+	Dig Spot 3:
+	Text:
+		Something is buried
+		in the wall...
+		
+		There's a way
+		through.
+			Tile becomes passable tunnel.
+
+	Spooky Spot
+	Text: 
+		Standing here
+		gives you the
+		heebie-jeebies.
+	(if esoterica, activated murder thumbs)
+	Options:
+		1. Finish ritual
+			Dream Door -> HELL
+
+	St. Andrew's Cross
+	Text: (if blindfold still there)
+		There's a blind-
+		fold hanging here.
+	else
+		Looks uncomfortable.
+	Options:
+		1. Take it
+			Gain BLINDFOLD
+		2. Leave it
+			Nothing
+			
+	Blood Buckets
+	Text: (if Esoterica)
+		A life? A dream? 
+		It is red.
+	Options: (if Esoterica && DEVIL'S BRUSH)
+		1. Paint face
+			Gain BLOOD CURSE
+	
+	Tool Desk (left)
+	Text: 
+		Stained implements
+		and stainless steel.
+		
+		There's a cabinet.
+		(It's open.)
+	Options:
+		1. Take it
+			Gain WRENCH
+		2. Leave it
+			Nothing
+	
+	Tool Desk (right)
+	Text: 
+		Stained implements
+		and stainless steel.
+		
+		There's a cabinet.
+		It's chained shut. (-> It's open.)
+	Options:
+		1. (if RUSTY BOLT CUTTERS) Cut it open
+			Gain KEY
+		2. Leave it
+			Nothing
+			
+	Surgery Table
+	Text:
+		Ducts connect the
+		drains in the table
+		to cylinders nearby.
+	Options:
+		1. (if RUSTY BOLT CUTTERS and MURDERER ON TABLE and ESOTERICA)
+		Take a thumb
+			Gain DEVIL'S BRUSH
+		2. Leave it
+			Nothing
+			
+	Basement Door
+	Text:
+		It's locked.
+		It seems sturdy.
+	Options:
+		1. (if KEY)
+			Unlock
+			Combat: MURDERER
+		2. Knock
+			No response...

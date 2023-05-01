@@ -8,7 +8,9 @@ if !window_get_fullscreen()
 window_set_size(480, 320);
 window_set_caption("it's just a dream")
 
-// set up globals
+// set up static globals
 global.tile_size = 16;
 global.dreamforms_unlocked = ["BEAST MAN", "MANTIS SENSEI"];
+
+// randomize or don't
 randomize();

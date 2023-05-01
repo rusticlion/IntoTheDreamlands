@@ -34,5 +34,5 @@
     "path": "sprites/spr_debug_duck/spr_debug_duck.yy",
   },
   "spriteMaskId": null,
-  "visible": true,
+  "visible": false,
 }

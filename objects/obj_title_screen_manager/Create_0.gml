@@ -10,7 +10,6 @@ letter_drawing(0*global.tile_size, 2*global.tile_size, title_text_l1);
 letter_drawing(2*global.tile_size, 4*global.tile_size, title_text_l2);
 
 readyTimer = function() {
-	show_debug_message("counting off five frames");
 	ready = false;
 	alarm[0] = 5;
 }

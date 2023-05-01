@@ -48,6 +48,8 @@ interview1 = "YOUR NAME?"
 
 interview2 = "CAT'S NAME?"
 
+interview3 = "WHO ARE YOU?"
+
 stanza1 = [l1,l2,l3,l4]
 stanza2 = [l5,l6,l7,l8]
 
@@ -195,10 +197,28 @@ waitForPlayerCatName = function() {
 			keyboard.field = keyboard.field_default;
 		}
 		global.player_cat_name = keyboard.field;
-		endCutscene();
+		showInterview3();
 	}
 	keyboard.field_default = "HOWARD";
 	click = click_key;
+}
+
+showInterview3 = function() {
+	clearText();
+	instance_destroy(keyboard);
+	char_cursor = 0;
+	line_cursor = 0;
+	stanza = "INTERVIEW_3";
+}
+
+waitForPlayerCharSelect = function() {
+	stanza = noone;
+	char_picker = instance_create_layer(5*global.tile_size, 4*global.tile_size, "Instances", obj_char_picker);
+	char_picker.click = function() {
+		global.player_sprite = char_picker.cursor;
+		endCutscene();
+	}
+	click = click_character;
 }
 
 endCutscene = function() {
@@ -214,6 +234,9 @@ click_key = function() {
 	keyboard.click();	
 }
 
+click_character = function() {
+	char_picker.click();	
+}
 
 
 showStanza1();

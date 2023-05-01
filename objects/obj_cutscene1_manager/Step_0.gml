@@ -136,6 +136,16 @@ switch(stanza) {
 			waitForPlayerCatName();
 		}
 	break;
+	case "INTERVIEW_3":
+		show_debug_message(string(interview3)+" "+string(char_cursor));
+		var next_letter = string_char_at(interview3, char_cursor);
+		if (char_cursor <= string_length(interview3)) {
+			var new_letter_tile = letter_drawing((char_cursor)*global.tile_size,9*global.tile_size,next_letter)[0];
+			array_push(displayed_characters, new_letter_tile);
+		} else {
+			waitForPlayerCharSelect();
+		}
+	break;
 	default:
 	
 	break;
