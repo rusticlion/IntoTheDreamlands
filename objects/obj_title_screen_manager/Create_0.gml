@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+global.phase = "REAL WORLD";
+
 menu_selection = "NEW GAME";
 ready = true;
 

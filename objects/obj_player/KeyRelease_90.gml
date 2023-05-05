@@ -1,4 +1,4 @@
-/// @description Insert description here
+/// @description Interact
 // You can write your code in this editor
 target = noone;
 switch(sprite_index) {
@@ -18,7 +18,7 @@ switch(sprite_index) {
 	break;
 }
 
-if (target != noone) {
+if (target != noone && !isLocked()) {
 	with (target) {
 		event_user(0);
 	}

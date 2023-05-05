@@ -4,6 +4,7 @@
   "name": "obj_demon_basement_manager",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -11,7 +12,10 @@
     "name": "DemonBasement",
     "path": "folders/Objects/world/DemonBasement.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_actor",
+    "path": "objects/obj_actor/obj_actor.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -26,7 +30,7 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": false,
+  "solid": true,
   "spriteId": null,
   "spriteMaskId": null,
   "visible": true,

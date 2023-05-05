@@ -1,3 +1,16 @@
+R G B -> Scary, Cool, Funny
+
+COMBAT
+
+* New Player Experience
+	Fight 0
+	
+	Fight 1
+	* Static toughness, black dice only
+	* Then introduce white dice when dummy strikes back
+	* Then introduce gadget (toggler) to get attack or defend
+	
+
 * Implement Effects:
 	* Check for Effects when calculating dice pool and on phase transitions
 		* Best way to implement Opulence?
@@ -10,3 +23,42 @@ gadgets, and effects.
 	3. Call these all at once in the DM by just calling the passthrough on every
 	Duel Piece. Should save the trouble of having bespoke calls to different types
 	in the DM at every state transition.
+	
+WORLD
+
+* Pause menu
+	* Lock player
+	* Dreamform,Metatools,Esoterica,Save,Done
+	* Dreamform
+		* See the cards associated with each BP
+	* Metatools
+		* See owned metatools
+		* Arrange on grid?
+	* Esoterica
+		* See entries indexed by Dream
+
+* Better saves
+	* Items
+		* Dream Inventory
+		* Real Inventory
+	* Bodyparts
+		* simple actually:
+			* bp array
+			* matched array with 0,1,2 states
+	* Game Phase
+	* Room
+	* Location
+* Real dream system
+	* Records
+		* real-world items that let you set spawn point in dreamlands
+	* Rabbitholes
+	* Random encounters
+		* Memory Dealer
+			* Buy an item you previously found
+			* Lose a body part (replace it with Cat's Paw or Cat's Maw)
+		* The Jabberwock
+			* Only happens after Leng reached
+			* Hard combat
+		* Healing
+			* Heal all injured body parts
+			

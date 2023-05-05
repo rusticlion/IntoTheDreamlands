@@ -2,7 +2,7 @@
 show_debug_message("clicked pipe d")
 if (dialog_active) {
 	dialog_active = false;	
-} else if (shovel_present) {
+} else if (shovel_present && !obj_player.moving) {
 	dialog_active = true;
 	shovel_discovery_dialog = instance_create_layer(
 		0,0,"Overlay",
@@ -16,7 +16,7 @@ if (dialog_active) {
 		if (choice == 0) {
 			sprite_index = spr_wall_pipe_porthole;
 			shovel_present = false;
-			// add shovel to inventory
+			obj_player.gainItem(obj_shovel); //add shovel to inventory
 			instance_destroy(shovel_discovery_dialog);
 		} else if (choice == 1) {
 			instance_destroy(shovel_discovery_dialog);
@@ -24,7 +24,7 @@ if (dialog_active) {
 			show_debug_message("Got unexpected choice in wall_pipe_b: "+string(choice));
 		}
 	}
-} else {
+} else if (!obj_player.moving) {
 	dialog_active = true;
 	instance_create_layer(
 		0,0,"Overlay",

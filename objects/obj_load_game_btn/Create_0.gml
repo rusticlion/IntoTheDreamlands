@@ -4,5 +4,4 @@ active = false;
 
 click = function() {
 	Load("player1");
-	room_goto(Bedroom);
 }

@@ -6,15 +6,33 @@
 
 // Set up three pipes
 	pipe_alpha = instance_create_layer(0,0,"BGInstances",obj_wall_pipe_a);
-	pipe_alpha.x = global.tile_size*3;
-	pipe_alpha.y = global.tile_size*10;
 	pipe_beta = instance_create_layer(0,0,"BGInstances",obj_wall_pipe_b);
-	pipe_beta.x = global.tile_size*11;
-	pipe_beta.y = global.tile_size*9
 	pipe_delta = instance_create_layer(0,0,"BGInstances",obj_wall_pipe_d);
-	pipe_delta.x = global.tile_size*11;
-	pipe_delta.y = global.tile_size*11
+	var shuffled_pipes = array_shuffle([pipe_alpha, pipe_beta, pipe_delta]);
+	
+	shuffled_pipes[0].x = global.tile_size*3;
+	shuffled_pipes[0].y = global.tile_size*10;
+	shuffled_pipes[1].x = global.tile_size*11;
+	shuffled_pipes[1].y = global.tile_size*9
+	shuffled_pipes[2].x = global.tile_size*11;
+	shuffled_pipes[2].y = global.tile_size*11;
+	
+	pipe_c = instance_create_layer(0,0,"BGInstances",obj_wall_pipe_c);
+	pipe_c.x = global.tile_size*3;
+	pipe_c.y = global.tile_size*12;
+	
 // Set up three cracks
+	crack_alpha = instance_create_layer(0,0,"FGInstances",obj_cracked_wall_a);
+	crack_beta = instance_create_layer(0,0,"FGInstances",obj_cracked_wall_b);
+	crack_delta = instance_create_layer(0,0,"FGInstances",obj_cracked_wall_d);
+	var shuffled_cracks = array_shuffle([crack_alpha, crack_beta, crack_delta]);
+	
+	shuffled_cracks[0].x = global.tile_size*6;
+	shuffled_cracks[0].y = global.tile_size*6;
+	shuffled_cracks[1].x = global.tile_size*7;
+	shuffled_cracks[1].y = global.tile_size*6;
+	shuffled_cracks[2].x = global.tile_size*8;
+	shuffled_cracks[2].y = global.tile_size*6;
 
 // Set up spooky spot
 

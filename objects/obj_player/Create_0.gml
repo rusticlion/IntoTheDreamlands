@@ -5,7 +5,19 @@ momentum = 0;
 image_speed = 0;
 win_count = 0;
 dreamform = "BEAST MAN";
+
 equipped_item = noone;
+realworld_items = [];
+dreamlands_items = [];
+
+for (var i=0;i<array_length(global.realworld_items);i++) {
+	var reified_item = instance_create_layer(0,0,layer,item_index);
+	array_push(realworld_items, reified_item);
+}
+for (var i=0;i<array_length(global.dreamlands_items);i++) {
+	var reified_item = instance_create_layer(0,0,layer,item_index);
+	array_push(dreamlands_items, reified_item);
+}
 
 facing_tile_x = x;
 facing_tile_y = y+16;
@@ -32,7 +44,8 @@ switch(global.player_sprite) {
 }
 sprite_index = down_sprite;
 
-bodyparts = [4,8,1,1,1,1];
+bodyparts = loadBodyFromGlobal();
+bodyparts_hp = loadBodyHPFromGlobal();
 gadgets = [
 	{
 		xx: 1*global.tile_size,
@@ -66,14 +79,15 @@ gadgets = [
 	},
 ];
 
-global.items = [
-	"DEVIL'S BRUSH",
-	"SHOVEL",
-	"BOLT CUTTERS",
-	"BLINDFOLD",
-	"WRENCH",
-	"KEY"
-]
+getItems = function() {
+	if (global.phase == "REAL WORLD") {
+		return realworld_items;
+	} else if (global.phase == "DREAMLANDS") {
+		return dreamlands_items;
+	} else {
+		show_debug_message("! Tried to get items when not in an overworld phase");	
+	}
+}
 
 lock = function() {
 	moving = true;
@@ -82,13 +96,20 @@ unlock = function() {
 	moving = false;	
 }
 
+isLocked = function() {
+	if moving {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 getDeck = function() {
-	bodyparts = obj_ai_duelist.getBody(dreamform);
 	return array_shuffle(bodyparts);	
 }
 
 getBody = function() {
-	bodyparts = obj_ai_duelist.getBody(dreamform);
+	// bodyparts = obj_ai_duelist.getBody(dreamform);
 	return bodyparts;	
 }
 
@@ -108,3 +129,7 @@ registerWin = function(opp_name) {
 	}
 }
 
+gainItem = function(item_index) {
+	var reified_item = instance_create_layer(0,0,layer,item_index);
+	array_push(getItems(), reified_item);
+}

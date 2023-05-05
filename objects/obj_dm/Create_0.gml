@@ -62,6 +62,9 @@ player1.name = "LionBots";
 player2 = instance_create_layer(0,0,"Pieces",obj_ai_duelist);
 foes = ["CHESHIRE LION", "DRAGON", "MANTIS SENSEI", "BONE DEMON", "TREASURE WIGHT", "BONE GARGOYLE", "KRAKEN"];
 player2.name = noone;
+
+obj_player.lock();
+// enemy randomizer
 while (player2.name == noone) {
 	var candidate = foes[irandom(6)];
 	var already_fought = false;
@@ -75,14 +78,16 @@ while (player2.name == noone) {
 	}
 }
 
+player2.name = global.duel_parameters.enemy_duelist;
+
 player1_cards = obj_player.getDeck();
 player1_discard = [];
-player1_bodyparts = obj_player.getBody();
+player1_bodyparts_list = obj_player.getBody();
 player1_gadgets = obj_player.getGadgets();
 
 player2_cards = player2.getDeck(player2.name); // gets ai duelist logic for particular opponent
 player2_discard = [];
-player2_bodyparts = player2.getBody(player2.name);
+player2_bodyparts_list = player2.getBody(player2.name);
 player2_gadgets = player2.getGadgets(player2.name);
 
 player1.opponent = player2;
@@ -102,11 +107,12 @@ for (var i = 0; i < 6; i+= 1) {
 	210,
 	322+i*16, //magic number p1_y_offset
 	"Slots",
-	global.bodypart_index[player1_bodyparts[i]],
+	global.bodypart_index[player1_bodyparts_list[i]],
 	{
 		controller: player1
 	}
 	);
+	p1_bp.hp = obj_player.bodyparts_hp[i];
 	array_push(player1.bodyparts, p1_bp);
 }
 
@@ -115,7 +121,7 @@ for (var i = 0; i < 6; i+=1) { // magic number 6 is BP count
 	2, // space into slots
 	66+i*16, //magic number p2_y_offset
 	"Slots",
-	global.bodypart_index[player2_bodyparts[i]],
+	global.bodypart_index[player2_bodyparts_list[i]],
 	{
 		controller: player2
 	}
@@ -288,27 +294,44 @@ goToCleanup = function() {
 	}
 }
 
+cleanupDuel = function() {
+	obj_player.visible = true;
+	obj_player.unlock();	
+}
+
 goToLoss = function() {
+	cleanupDuel();
 	obj_player.win_count = 0;
 	obj_player.dreamform = "BEAST MAN";
 	global.dreamforms_unlocked = ["BEAST MAN"];
 	phase = "LOSS";
+	obj_player.bodyparts_hp = [2,2,2,2,2,2];
 	Save("player1");
 }
 
 goToTie = function() {
+	cleanupDuel();
 	phase = "TIE";
+	for(var i=0; i<array_length(player1.bodyparts); i++) {
+		obj_player.bodyparts_hp[i] = player1.bodyparts[i].hp;
+	}
 	Save("player1");
 }
 
 goToWin = function() {
+	cleanupDuel();
 	obj_player.win_count++;
 	obj_player.registerWin(player2.name);
 	if (obj_player.win_count >= array_length(foes)) {
 		obj_player.win_count = "WIN!";	
 	}
+	for(var i=0; i<array_length(player1.bodyparts); i++) {
+		obj_player.bodyparts_hp[i] = player1.bodyparts[i].hp;
+		show_debug_message("Set a bp to this much hp: "+string(player1.bodyparts[i].hp));
+	}
 	phase = "WIN";
-	Save("player1");
+	global.duel_parameters.victoryHandler();
+	room_goto(global.duel_parameters.fight_room);
 }
 
 // start the duel!

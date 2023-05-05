@@ -2,7 +2,7 @@
 // You can write your code in this editor
 top_frame = 0;
 cursor = 0;
-endpoint = array_length(global.items)-1;
+endpoint = array_length(obj_player.getItems())-1;
 done_building = false;
 
 obj_player.lock();

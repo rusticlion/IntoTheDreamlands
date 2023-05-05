@@ -8,8 +8,8 @@
 
 // Should display a character portrait if present.
 // Should show dialog one page at a time.
-// Should report when dialog concludes.
-// Should draw and report choices if present.
+// Should take choice before concluding if present.
+// Should perform handler when dialog concludes.
 
 cursor = 0;
 endpoint = array_length(pages)-1;
@@ -45,3 +45,5 @@ if (cursor < endpoint) {
 choiceHandler = function(choice) {
 	show_debug_message("Finished a choice but no handler assigned!"+string(choice));
 }
+
+show_debug_message("spawned a dialog box starting with: "+pages[0]);

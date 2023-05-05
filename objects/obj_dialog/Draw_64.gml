@@ -6,7 +6,7 @@ draw_set_font(KenneyMini)
 
 draw_text_ext(
 	x+global.tile_size*3,
-	y,
+	y+2,
 	string_copy(pages[cursor], 1, typewriterProgress),
 	16,
 	global.tile_size*12
@@ -27,7 +27,6 @@ if (show_choices) {
 			false
 		);
 		choice_text = (choice_cursor==i) ? ">"+this_choice : this_choice;
-		draw_text(9*global.tile_size+1, y+global.tile_size*(i-3), choice_text);
-		show_debug_message(choice_text);
+		draw_text(9*global.tile_size+1, y+global.tile_size*(i-3)+2, choice_text);
 	}
 }
