@@ -3,7 +3,6 @@ show_debug_message("clicked pipe d")
 if (dialog_active) {
 	dialog_active = false;	
 } else if (shovel_present && !obj_player.moving) {
-	dialog_active = true;
 	shovel_discovery_dialog = instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,
@@ -25,7 +24,6 @@ if (dialog_active) {
 		}
 	}
 } else if (!obj_player.moving) {
-	dialog_active = true;
 	instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,

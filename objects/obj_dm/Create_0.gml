@@ -113,6 +113,7 @@ for (var i = 0; i < 6; i+= 1) {
 	}
 	);
 	p1_bp.hp = obj_player.bodyparts_hp[i];
+	p1_bp.spawnSlots();
 	array_push(player1.bodyparts, p1_bp);
 }
 
@@ -126,6 +127,7 @@ for (var i = 0; i < 6; i+=1) { // magic number 6 is BP count
 		controller: player2
 	}
 	);
+	p2_bp.spawnSlots();
 	array_push(player2.bodyparts, p2_bp);
 }
 
@@ -157,6 +159,21 @@ for (var i = 0; i<array_length(player2_gadgets);i++) { //not even programming, d
 
 instance_create_layer(112, 320, "Pieces", obj_go_btn);
 // Func declarations
+panToMiddle = function() {
+	show_debug_message("panning to middle");
+	var _cameraman = instance_nearest(x, y, obj_camera_controller);
+	with (_cameraman) {
+		event_user(1);
+	}
+	obj_mouse_cursor.y -= 160;
+	
+	player1.translateActiveCard();
+	player2.translateActiveCard();
+	
+	player1.translateBodyParts();
+	player2.translateBodyParts();
+}
+
 // Main game loop: DRAW, PLAN, CLASH, RESULTS, CLEANUP, repeat
 
 goToDraw = function() {
@@ -205,11 +222,7 @@ goToClash = function() {
 	}
 	phase = "CLASH";
 	game_view = "clash";
-	var _cameraman = instance_nearest(x, y, obj_camera_controller);
-	with (_cameraman) {
-		event_user(1);
-	}
-	obj_mouse_cursor.y -= 160;
+	panToMiddle();
 	
 	if (!player1.hasEffect(obj_eff_stunned)) {
 		player1.translateDicePool();
@@ -222,11 +235,6 @@ goToClash = function() {
 	for (i=0;i<array_length(player2.dice_pool);i++) {
 		player2.dice_pool[i].live = false;
 	}
-	player1.translateActiveCard();
-	player2.translateActiveCard();
-	
-	player1.translateBodyParts();
-	player2.translateBodyParts();
 	
 	player1.active_card.clashEffect();
 	player2.active_card.clashEffect();
@@ -262,41 +270,42 @@ goToCleanup = function() {
 		goToLoss();	
 	} else if (player2.blood <= 0) {
 		goToWin();
-	}
+	} else {
+		game_view = "home";
+		var _cameraman = instance_nearest(x, y, obj_camera_controller);
 	
-	game_view = "home";
-	var _cameraman = instance_nearest(x, y, obj_camera_controller);
-	
-	with(_cameraman) {
-		event_user(2);	
-	}
-	obj_mouse_cursor.y += 160;
-	player1.resetBodyParts();
-	player2.resetBodyParts();
-	player1.active_card.cleanupEffect();
-	player2.active_card.cleanupEffect();
-	for (var i=0;i<array_length(player1.effects);i++){
-		player1.effects[i].cleanupEffect();
-	}
-	for (var i=0;i<array_length(player2.effects);i++){
-		player2.effects[i].cleanupEffect();
-	}
-	array_push(player1_discard, player1.active_card.index_number);
-	array_push(player2_discard, player2.active_card.index_number);
-	instance_destroy(player1.active_card);
-	instance_destroy(player1.next_card);
-	instance_destroy(player2.active_card);
-	instance_destroy(player2.next_card);
-	player1.resetDiceModifiers();
-	player2.resetDiceModifiers();
-	if (phase != "WIN" && phase != "LOSS" && phase != "TIE") {
+		with(_cameraman) {
+			event_user(2);	
+		}
+		obj_mouse_cursor.y += 160;
+		player1.resetBodyParts();
+		player2.resetBodyParts();
+		player1.active_card.cleanupEffect();
+		player2.active_card.cleanupEffect();
+		for (var i=0;i<array_length(player1.effects);i++){
+			player1.effects[i].cleanupEffect();
+		}
+		for (var i=0;i<array_length(player2.effects);i++){
+			player2.effects[i].cleanupEffect();
+		}
+		array_push(player1_discard, player1.active_card.index_number);
+		array_push(player2_discard, player2.active_card.index_number);
+		instance_destroy(player1.active_card);
+		instance_destroy(player1.next_card);
+		instance_destroy(player2.active_card);
+		instance_destroy(player2.next_card);
+		player1.resetDiceModifiers();
+		player2.resetDiceModifiers();
+		
 		goToDraw();
 	}
 }
 
 cleanupDuel = function() {
 	obj_player.visible = true;
-	obj_player.unlock();	
+	obj_player.unlock();
+	global.duel_parameters.victoryHandler();
+	room_goto(global.duel_parameters.fight_room);
 }
 
 goToLoss = function() {
@@ -307,6 +316,7 @@ goToLoss = function() {
 	phase = "LOSS";
 	obj_player.bodyparts_hp = [2,2,2,2,2,2];
 	Save("player1");
+	room_goto(Bedroom);
 }
 
 goToTie = function() {
@@ -316,10 +326,10 @@ goToTie = function() {
 		obj_player.bodyparts_hp[i] = player1.bodyparts[i].hp;
 	}
 	Save("player1");
+	room_goto(Bedroom);
 }
 
 goToWin = function() {
-	cleanupDuel();
 	obj_player.win_count++;
 	obj_player.registerWin(player2.name);
 	if (obj_player.win_count >= array_length(foes)) {
@@ -329,10 +339,20 @@ goToWin = function() {
 		obj_player.bodyparts_hp[i] = player1.bodyparts[i].hp;
 		show_debug_message("Set a bp to this much hp: "+string(player1.bodyparts[i].hp));
 	}
-	phase = "WIN";
-	global.duel_parameters.victoryHandler();
-	room_goto(global.duel_parameters.fight_room);
+	
+	goToClaimBP();
 }
 
+
+goToClaimBP = function() {
+	phase = "CLAIM_BP"; // this enables the BP interaction and fx
+	// display WIN block letter overlay
+	// cursor click goes to post-duel cleanup
+}
+
+postDuelCleanup = function() {
+	phase = "POST_DUEL";
+	cleanupDuel();
+}
 // start the duel!
 goToDraw();

@@ -133,3 +133,9 @@ gainItem = function(item_index) {
 	var reified_item = instance_create_layer(0,0,layer,item_index);
 	array_push(getItems(), reified_item);
 }
+
+gainBP = function(bp_location_index, bp_id_index) {
+	bodyparts[bp_location_index] = bp_id_index;
+	bodyparts_hp[bp_location_index] = 2;
+	obj_dm.postDuelCleanup();
+}

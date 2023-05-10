@@ -5,6 +5,8 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,8 +15,8 @@
     "path": "folders/Objects/combat/bodyparts.yy",
   },
   "parentObjectId": {
-    "name": "obj_hoverable",
-    "path": "objects/obj_hoverable/obj_hoverable.yy",
+    "name": "obj_clickable",
+    "path": "objects/obj_clickable/obj_clickable.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

@@ -59,7 +59,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.1.75",
+    "IDEVersion": "2023.4.0.84",
   },
   "resources": [
     {"id":{"name":"obj_white_die","path":"objects/obj_white_die/obj_white_die.yy",},},
@@ -94,6 +94,7 @@
     {"id":{"name":"obj_pushbutton","path":"objects/obj_pushbutton/obj_pushbutton.yy",},},
     {"id":{"name":"spr_letter_u","path":"sprites/spr_letter_u/spr_letter_u.yy",},},
     {"id":{"name":"spr_card_blank_green","path":"sprites/spr_card_blank_green/spr_card_blank_green.yy",},},
+    {"id":{"name":"Pirate Ship","path":"notes/Pirate Ship/Pirate Ship.yy",},},
     {"id":{"name":"spr_card_002_b_octolock","path":"sprites/spr_card_002_b_octolock/spr_card_002_b_octolock.yy",},},
     {"id":{"name":"spr_bp_drake_head","path":"sprites/spr_bp_drake_head/spr_bp_drake_head.yy",},},
     {"id":{"name":"obj_bp004_drake_head","path":"objects/obj_bp004_drake_head/obj_bp004_drake_head.yy",},},
@@ -108,6 +109,7 @@
     {"id":{"name":"spr_effect_prophecy","path":"sprites/spr_effect_prophecy/spr_effect_prophecy.yy",},},
     {"id":{"name":"spr_card_004_a_bite","path":"sprites/spr_card_004_a_bite/spr_card_004_a_bite.yy",},},
     {"id":{"name":"obj_debug_duck","path":"objects/obj_debug_duck/obj_debug_duck.yy",},},
+    {"id":{"name":"School","path":"notes/School/School.yy",},},
     {"id":{"name":"obj_card_001_a_swift_slice","path":"objects/obj_card_001_a_swift_slice/obj_card_001_a_swift_slice.yy",},},
     {"id":{"name":"obj_title_screen_manager","path":"objects/obj_title_screen_manager/obj_title_screen_manager.yy",},},
     {"id":{"name":"obj_char_select_menu","path":"objects/obj_char_select_menu/obj_char_select_menu.yy",},},

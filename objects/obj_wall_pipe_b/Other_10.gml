@@ -24,7 +24,7 @@ if (dialog_active) {
 		}
 	}
 } else {
-	dialog_active = true;
+	dialog_active = false;
 	instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,

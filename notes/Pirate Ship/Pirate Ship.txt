@@ -1,0 +1,7 @@
+Purpose:
+	The Pirate Ship is about one-way choices and changing the state of a room.
+	Pirates and Molluscmen are fighting and you must tip the balance for one
+	or the other to get the default rabbithole. You will get different items
+	depending on which side you help.
+Actors:
+	

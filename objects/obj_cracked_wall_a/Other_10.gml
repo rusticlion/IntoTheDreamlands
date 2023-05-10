@@ -8,7 +8,6 @@ if (!unrevealed) {
 	dialog_active = false;
 } else if (obj_player.equipped_item == noone) {
 	show_debug_message("player has no shovel dialog");
-	dialog_active = true;
 	instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,
@@ -19,7 +18,6 @@ if (!unrevealed) {
 	);
 } else if (obj_player.equipped_item.object_index == obj_shovel && !obj_player.moving) {
 	show_debug_message("player has shovel and is ready dialog");
-	dialog_active = true;
 	shovel_active_dialog = instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,
@@ -50,7 +48,6 @@ if (!unrevealed) {
 	}
 } else if (unrevealed) {
 	show_debug_message("fallback player has no shovel dialog");
-	dialog_active = true;
 	instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,

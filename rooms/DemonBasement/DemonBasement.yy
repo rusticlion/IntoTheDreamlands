@@ -2,7 +2,7 @@
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
   "name": "DemonBasement",
-  "creationCodeFile": "${project_dir}/rooms/DemonBasement/RoomCreationCode.gml",
+  "creationCodeFile": "rooms/DemonBasement/RoomCreationCode.gml",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,

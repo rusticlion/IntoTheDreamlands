@@ -1,10 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
+
 hp = 2;
 available_to_clash = true;
 attack_slot = noone;
 defense_slot = noone;
-
+is_hovered = false;
 
 evaluate = function() {
 	if (hp == 0) {
@@ -78,8 +80,10 @@ spawnSlots = function() {
 		show_debug_message("Own Class: ")
 		show_debug_message(object_get_name(bp_for_slot.object_index))
 		show_debug_message(self.toughness)
-		self.defense_slot = instance_create_layer(x - 16, y-2, "Slots", obj_defense_slot, {bodypart: bp_for_slot});
-		self.attack_slot = instance_create_layer(x - 32, y - 130, "Slots", obj_attack_slot, {bodypart: bp_for_slot});
+		if (hp > 0) {
+			self.defense_slot = instance_create_layer(x - 16, y-2, "Slots", obj_defense_slot, {bodypart: bp_for_slot});
+			self.attack_slot = instance_create_layer(x - 32, y - 130, "Slots", obj_attack_slot, {bodypart: bp_for_slot});
+		}
 	} else {
 		bp_for_slot = self
 		self.defense_slot = instance_create_layer(x + 32, y-2, "Slots", obj_defense_slot, {bodypart: bp_for_slot});
@@ -101,10 +105,8 @@ switchOffSplendor = function() {
 }
 
 respawnBodypart = function() {
-	spawnSlots();
-	image_blend = noone;
 	controller.blood += blood_value;
 	hp = 2;
+	spawnSlots();
+	image_blend = noone;
 }
-
-spawnSlots();

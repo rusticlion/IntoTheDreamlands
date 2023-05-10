@@ -4,7 +4,6 @@ show_debug_message("clicked crack b")
 if (dialog_active) {
 	dialog_active = false;
 } else if (obj_player.equipped_item == noone) {
-	dialog_active = true;
 	instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,
@@ -14,7 +13,6 @@ if (dialog_active) {
 		}
 	);
 } else if (obj_player.equipped_item.object_index == obj_shovel) {
-	dialog_active = true;
 	shovel_active_dialog = instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,
@@ -25,7 +23,7 @@ if (dialog_active) {
 	);
 	shovel_active_dialog.choiceHandler = function(choice) {
 		if (choice == 0) {
-			image_index = 2;
+			image_index = 1;
 			instance_destroy(shovel_active_dialog);
 			unrevealed = false;
 			var bonedemon_attack_dialog = instance_create_layer(
@@ -55,7 +53,6 @@ if (dialog_active) {
 		}
 	}
 } else if (unrevealed) {
-	dialog_active = true;
 	instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,

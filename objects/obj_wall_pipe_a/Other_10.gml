@@ -3,7 +3,7 @@
 if (dialog_active) {
 	dialog_active = false;	
 } else {
-	dialog_active = true;
+	dialog_active = false;
 	instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,

@@ -1,0 +1,9 @@
+Purpose:
+	School provides a good context for the Tutorial - it is [CAT]'s 
+	destination when forced to flee from Leng with you. It establishes 
+	non-Euclidean spaces and non-linearity: pass some number of challenges
+	for the main Rabbithole.
+
+Actors:
+
+	

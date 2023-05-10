@@ -32,8 +32,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_wall_crack_zombie",
-    "path": "sprites/spr_wall_crack_zombie/spr_wall_crack_zombie.yy",
+    "name": "spr_wall_crack_skeleton",
+    "path": "sprites/spr_wall_crack_skeleton/spr_wall_crack_skeleton.yy",
   },
   "spriteMaskId": null,
   "visible": true,

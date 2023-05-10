@@ -1,3 +1,10 @@
+Purpose:
+	The Demon Basement is about puzzle-solving and close observation.
+	Of the three "Tier 1" locations, it has the most loot and the 
+	most rabbitholes. It contains powerful combats that can be
+	avoided once the level is known - knowing when and how to
+	pick fights here is skill testing.
+
 Actors:
 
 	Pipe 1
@@ -17,7 +24,7 @@ Actors:
 		Open hatch
 	If (MINI and OPEN)
 		Dive in
-			Dream Door -> Undersea
+			Rabbithole -> Undersea
 		
 	Pipe 3:	
 	Text:
@@ -34,7 +41,7 @@ Actors:
 		in the wall...
 		
 		It attacks!
-			Combat: MOLEMAN
+			Combat: ZOMBIE
 		
 	Dig Spot 2:
 	Text:
@@ -61,7 +68,7 @@ Actors:
 	(if esoterica, activated murder thumbs)
 	Options:
 		1. Finish ritual
-			Dream Door -> HELL
+			Rabbit Hole -> HELL
 
 	St. Andrew's Cross
 	Text: (if blindfold still there)
@@ -129,5 +136,6 @@ Actors:
 		1. (if KEY)
 			Unlock
 			Combat: MURDERER
+				Victory: Rabbithole -> Pirate Ship
 		2. Knock
 			No response...
