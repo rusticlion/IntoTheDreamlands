@@ -1,0 +1,22 @@
+Saving and Loading
+
+The player can use the "Save" command at any time, but the interface will note
+that you can only save your progress from the "beginning of the current dream".
+
+Practically, there are three "stores" or layers of memory:
+	* The entire state of the rooms and instances in the current runtime.
+	* The flat "global" data registry.
+	* The .ini external save file.
+	
+The basic idea is that the Save and Load functions are glue code that
+mirrors the contents of the global registry and the .ini file 1:1.
+So the contents of the global registry is the "last saved" data.
+
+We keep things like lists of unlocks, story flags, and other "game progress"
+on global. We keep more transient data like inventory and health on the relevant
+entities instead, usually obj_player, and we write them to global between rooms.
+
+We mirror global to the .ini when we want to save, and we load the .ini into global when
+we load. 
+
+Maybve we don't really need to use global for save buffering and should just 

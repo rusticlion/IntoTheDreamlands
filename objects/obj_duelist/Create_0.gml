@@ -17,7 +17,7 @@ b_ceiling = 2;
 
 energy = 0;
 
-blood = 10;
+blood = 3;
 
 active_card = noone;
 
@@ -84,11 +84,11 @@ translateDicePool = function() {
 	var pool_base_coordinate_x; // magic numbers to place the
 	var pool_base_coordinate_y; // dice pool for each player
 	if (obj_dm.player1.id == self.id) {
-		pool_base_coordinate_x = 65;
-		pool_base_coordinate_y = 291;
+		pool_base_coordinate_x = 1+global.tile_size*4;
+		pool_base_coordinate_y = 3+global.tile_size*18;
 	} else {
-		pool_base_coordinate_x = 66;
-		pool_base_coordinate_y = 162;
+		pool_base_coordinate_x = 2+global.tile_size*4;
+		pool_base_coordinate_y = 2+global.tile_size*10;
 	}
 	
 	next_die_x = pool_base_coordinate_x
@@ -156,30 +156,6 @@ resetBodyParts = function() {
 }
 
 
-// deprecated
-
-nominateBodyPart = function() {
-	var eligible_parts = [];
-	for(i=0;i<array_length(bodyparts);i++) {
-		if bodyparts[i].available_to_clash {
-			array_push(eligible_parts, bodyparts[i])
-		}
-	}
-	var shuffled_parts = array_shuffle(eligible_parts);
-	return shuffled_parts[0];
-}
-
-translateBodyPartToTradeBlows = function(bodypart) {
-	if (obj_dm.player1.id == self.id) {
-		bodypart.x = 82;
-		bodypart.y = 258;
-	} else {
-		bodypart.x = 130;
-		bodypart.y = 210;
-	}
-}
-
-//
 // an "effect index" is a valid object index for an Effect
 addEffect = function(effect_index) {
 	var effect_owner = self;
@@ -276,4 +252,19 @@ doomed = function() {
 			}
 		}
 	return result;
+}
+
+// note, this does not reflect "heart points"
+// but rather "hit points" from all BPs. It is a read-only 
+// value useful primarily for knowing whether
+// heals or damage effects have gone off, by
+// checking its value over time.
+hp_total = function() {
+	var total = 0;
+	for (var i=0;i<array_length(bodyparts);i++) {
+		if instance_exists(bodyparts[i]) {
+			total += bodyparts[i].hp;	
+		}
+	}
+	return total;
 }

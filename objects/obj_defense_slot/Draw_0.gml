@@ -1,6 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+if (difficulty > 19) {
+	image_index = 11;
+} else if (difficulty > 9) {
+	image_index = 10;
+} else {
+	image_index = difficulty;
+}
 draw_self();
-draw_set_color(c_white);
-draw_set_font(KenneyMini);
-draw_text(x+5, y+1, string(difficulty));

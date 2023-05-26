@@ -12,5 +12,6 @@ if a_side_up {
 	hover_text = hover_text_a;
 	upside = side_a;
 }
-
-controller.refreshDicePool();
+if instance_exists(obj_dm) {
+	controller.refreshDicePool();
+}

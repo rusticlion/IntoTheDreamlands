@@ -1,9 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-opp_blood_when_cast = 42;
+opp_hp_total_when_cast = 42;
 getDice = function(controller = noone) {
-	opp_blood_when_cast = controller.opponent.blood;
+	opp_hp_total_when_cast = controller.opponent.hp_total();
 	var pool = [];
 	if (controller) {
 		repeat (1) {
@@ -23,7 +23,7 @@ getDice = function(controller = noone) {
 }
 
 cleanupEffect = function(card) {
-	if (card.controller.opponent.blood < opp_blood_when_cast) {
+	if (card.controller.opponent.hp_total() < opp_hp_total_when_cast) {
 		card.controller.opponent.addEffect(obj_eff_doom);
 	}
 	card.controller.curse_should_flip = true;

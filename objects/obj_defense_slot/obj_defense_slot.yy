@@ -35,8 +35,8 @@
   ],
   "solid": false,
   "spriteId": {
-    "name": "spr_bodypart_slot",
-    "path": "sprites/spr_bodypart_slot/spr_bodypart_slot.yy",
+    "name": "spr_bodypart_shield_slot_dark",
+    "path": "sprites/spr_bodypart_shield_slot_dark/spr_bodypart_shield_slot_dark.yy",
   },
   "spriteMaskId": null,
   "visible": true,

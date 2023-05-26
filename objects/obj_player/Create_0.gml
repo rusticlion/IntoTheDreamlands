@@ -46,38 +46,46 @@ sprite_index = down_sprite;
 
 bodyparts = loadBodyFromGlobal();
 bodyparts_hp = loadBodyHPFromGlobal();
-gadgets = [
+var default_gadgets = [
 	{
 		xx: 1*global.tile_size,
-		yy: 20*global.tile_size,
+		yy: 0,
 		gadget_index: 4
 	},
 	{
 		xx: 1*global.tile_size,
-		yy: 22*global.tile_size,
+		yy: 2*global.tile_size,
 		gadget_index: 5
 	},
 	{
 		xx: 1*global.tile_size,
-		yy: 24*global.tile_size,
+		yy: 4*global.tile_size,
 		gadget_index: 6
 	},
 	{
 		xx: 2*global.tile_size,
-		yy: 20*global.tile_size,
+		yy: 0,
 		gadget_index: 7
 	},
 	{
 		xx: 2*global.tile_size,
-		yy: 22*global.tile_size,
+		yy: 2*global.tile_size,
 		gadget_index: 8
 	},
 	{
 		xx: 2*global.tile_size,
-		yy: 24*global.tile_size,
+		yy: 4*global.tile_size,
 		gadget_index: 9
-	},
+	}
 ];
+equipped_gadgets = loadEquippedGadgetsFromGlobal();
+if (array_length(equipped_gadgets) < 1) {
+	equipped_gadgets = default_gadgets;	
+}
+unlocked_gadgets = loadUnlockedGadgetsFromGlobal();
+if (array_length(unlocked_gadgets) < 1) {
+	unlocked_gadgets = default_gadgets;	
+}
 
 getItems = function() {
 	if (global.phase == "REAL WORLD") {
@@ -114,7 +122,7 @@ getBody = function() {
 }
 
 getGadgets = function() {
-	return gadgets;	
+	return equipped_gadgets;	
 }
 
 registerWin = function(opp_name) {

@@ -14,7 +14,7 @@ getDice = function(controller = noone) {
 
 cleanupEffect = function(card) {
 	if (opp_blood_when_cast > card.controller.opponent.blood) {
-		opponent.addEffect(obj_eff_stunned);
+		card.controller.opponent.addEffect(obj_eff_stunned);
 	}
 	card.controller.b_factor = 0;
 }

@@ -1,6 +1,6 @@
 /// @description Insert description here
-hover_text = "DRAKE HEAD\n10 blood"
-blood_value = 10;
+hover_text = "DRAKE HEAD\n<3<3<3"
+blood_value = 3;
 toughness = 8;
 
 bp_class = "HEAD";

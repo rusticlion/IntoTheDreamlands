@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-hover_text = "Invisibility greatly\nincreases natural defense -\nuntil struck";
+hover_text = "Invisibility greatly increases natural defense - until struck";
 
 for(var i=0;i<array_length(owner.bodyparts);i++) {
 	owner.bodyparts[i].toughness += 5;

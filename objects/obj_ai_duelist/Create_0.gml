@@ -3,7 +3,7 @@
 event_inherited();
 
 body = [11,11,11,11,11,11]
-gadgets = [
+equipped_gadgets = [
 	{
 		xx: 13*global.tile_size,
 		yy: 4*global.tile_size,
@@ -48,6 +48,8 @@ getBody = function(ai_opponent) {
 		case "BEAST MAN":
 			body = [3,8,1,1,1,1]
 		break;
+		case "ZOMBIE":
+			body = [15, 14, 16, 16, 17, 17];
 		default:
 		break;
 		
@@ -66,7 +68,7 @@ getGadgets = function(ai_opponent) {
 		break;
 		
 	}
-	return gadgets;
+	return equipped_gadgets;
 }
 
 getDeck = function(ai_opponent) {

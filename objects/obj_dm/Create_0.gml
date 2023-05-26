@@ -2,60 +2,10 @@
 // You can write your code in this editor
 
 obj_player.visible = false;
+obj_player.lock();
 
-phase = "SETUP";
-game_view = "home";
-
-global.bodypart_index = [
-obj_bodypart,
-obj_bp001_beast_claw,
-obj_bp002_tentacle,
-obj_bp003_massive_eye,
-obj_bp004_drake_head,
-obj_bp005_cheshire_face,
-obj_bp006_demon_skull,
-obj_bp007_fleshy_mantle,
-obj_bp008_broad_shoulders,
-obj_bp009_hollow_ribcage,
-obj_bp010_jeweled_belly,
-obj_bp011_bare_bones,
-obj_bp012_mantis_arm,
-obj_bp013_leathery_wing
-]
-
-global.card_index = [
-obj_card,
-obj_card_001_beast_cutting,
-obj_card_002_tentacle_lashing,
-obj_card_003_cephalo_smackdown,
-obj_card_004_fire_and_fang,
-obj_card_005_nothing_personnel,
-obj_card_006_speaking_demon,
-obj_card_007_squid_fu,
-obj_card_008_pankration,
-obj_card_009_bone_dancer,
-obj_card_010_hoard_beast,
-obj_card_011_skeltal,
-obj_card_012_mantis_style,
-obj_card_013_vicious_raptor
-]
-
-global.gadget_index = [
-obj_gadget,
-obj_red_lever,
-obj_green_lever,
-obj_blue_lever,
-obj_red_injector,
-obj_green_injector,
-obj_blue_injector,
-obj_red_pushbutton,
-obj_green_pushbutton,
-obj_blue_pushbutton,
-obj_red_catalyst_crystal,
-obj_green_catalyst_crystal,
-obj_blue_catalyst_crystal
-]
-
+phase = "SETUP"; // for game state
+game_view = "home"; //for camera state
 
 player1 = instance_create_layer(0,0,"Pieces",obj_duelist);
 player1.name = "LionBots";
@@ -63,7 +13,6 @@ player2 = instance_create_layer(0,0,"Pieces",obj_ai_duelist);
 foes = ["CHESHIRE LION", "DRAGON", "MANTIS SENSEI", "BONE DEMON", "TREASURE WIGHT", "BONE GARGOYLE", "KRAKEN"];
 player2.name = noone;
 
-obj_player.lock();
 // enemy randomizer
 while (player2.name == noone) {
 	var candidate = foes[irandom(6)];
@@ -78,7 +27,9 @@ while (player2.name == noone) {
 	}
 }
 
-player2.name = global.duel_parameters.enemy_duelist;
+if (!global.endless_mode) {
+	player2.name = global.duel_parameters.enemy_duelist;
+}
 
 player1_cards = obj_player.getDeck();
 player1_discard = [];
@@ -133,11 +84,11 @@ for (var i = 0; i < 6; i+=1) { // magic number 6 is BP count
 
 gadgets = [];
 
-for (var i = 0; i<array_length(player1_gadgets);i++) { //not even programming, do real gadgets later
+for (var i = 0; i<array_length(player1_gadgets);i++) {
 	var gadget_data = player1_gadgets[i];
 	next_gadget = instance_create_layer(
 		gadget_data.xx,
-		gadget_data.yy,
+		gadget_data.yy+yOffset(),
 		"Pieces",
 		global.gadget_index[gadget_data.gadget_index],
 		{owner: player1}
@@ -172,6 +123,27 @@ panToMiddle = function() {
 	
 	player1.translateBodyParts();
 	player2.translateBodyParts();
+}
+
+changeView = function() {
+	var _cameraman = instance_nearest(x, y, obj_camera_controller);
+	with (_cameraman) {
+		event_user(0);
+	}
+
+	switch(game_view)
+	{
+		case "home":
+			game_view = "away";
+			obj_mouse_cursor.y -= 320
+		break;
+		case "away":
+			game_view = "home";
+			obj_mouse_cursor.y += 320
+		break;
+		default:
+		break;
+	}
 }
 
 // Main game loop: DRAW, PLAN, CLASH, RESULTS, CLEANUP, repeat
@@ -282,18 +254,19 @@ goToCleanup = function() {
 		player2.resetBodyParts();
 		player1.active_card.cleanupEffect();
 		player2.active_card.cleanupEffect();
-		for (var i=0;i<array_length(player1.effects);i++){
-			player1.effects[i].cleanupEffect();
-		}
-		for (var i=0;i<array_length(player2.effects);i++){
-			player2.effects[i].cleanupEffect();
-		}
+		
 		array_push(player1_discard, player1.active_card.index_number);
 		array_push(player2_discard, player2.active_card.index_number);
 		instance_destroy(player1.active_card);
 		instance_destroy(player1.next_card);
 		instance_destroy(player2.active_card);
 		instance_destroy(player2.next_card);
+		for (var i=0;i<array_length(player1.effects);i++){
+			player1.effects[i].cleanupEffect();
+		}
+		for (var i=0;i<array_length(player2.effects);i++){
+			player2.effects[i].cleanupEffect();
+		}
 		player1.resetDiceModifiers();
 		player2.resetDiceModifiers();
 		
@@ -348,6 +321,65 @@ goToClaimBP = function() {
 	phase = "CLAIM_BP"; // this enables the BP interaction and fx
 	// display WIN block letter overlay
 	// cursor click goes to post-duel cleanup
+}
+
+replaceBP = function(duelist, bp_index, new_bp_index_number) {
+	
+	// bp itself and associted slots
+	show_debug_message("Duelist: ")
+	show_debug_message(duelist)
+	var old_bp = duelist.bodyparts[bp_index];
+	var new_bp = instance_create_layer(
+		old_bp.x, // space into slots
+		old_bp.y, //magic number p2_y_offset
+		"Slots",
+		global.bodypart_index[new_bp_index_number],
+		{
+			controller: duelist
+		}
+	);
+	new_bp.spawnSlots();
+	show_debug_message($"Array of bps before replacement: {string(duelist.bodyparts)}")
+	array_delete(duelist.bodyparts, bp_index, 1);
+	array_insert(duelist.bodyparts, bp_index, new_bp);
+	show_debug_message($"Added: {new_bp}");
+	show_debug_message($"removed: {old_bp}");
+	show_debug_message($"Array of bps after replacement: {string(duelist.bodyparts)}")
+	if (duelist.id == obj_dm.player1.id) {
+		array_delete(obj_player.bodyparts, bp_index, 1);
+		array_insert(obj_player.bodyparts, bp_index, new_bp.index_number)
+		// associated card replacement
+		var replaced = false;
+		for(var i=0;i<array_length(player1_cards) && !replaced;i++) {
+			if (player1_cards[i] == old_bp.index_number) {
+				replaced = true;
+				player1_cards[i] = new_bp_index_number;
+			}
+		}
+		for (var i=0;i<array_length(player1_discard) && !replaced;i++) {
+			if (player1_discard[i] == old_bp.index_number) {
+				replaced = true;
+				player1_discard[i] = new_bp_index_number;
+			}
+		}
+	} else {
+		var replaced = false;
+		for(var i=0;i<array_length(player2_cards) && !replaced;i++) {
+			if (player2_cards[i] == old_bp.index_number) {
+				replaced = true;
+				player2_cards[i] = new_bp_index_number;
+			}
+		}
+		for (var i=0;i<array_length(player2_discard) && !replaced;i++) {
+			if (player2_discard[i] == old_bp.index_number) {
+				replaced = true;
+				player2_discard[i] = new_bp_index_number;
+			}
+		}
+		
+	}
+	
+	instance_destroy(old_bp);
 }
 
 postDuelCleanup = function() {

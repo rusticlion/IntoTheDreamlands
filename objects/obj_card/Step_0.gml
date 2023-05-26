@@ -1,3 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-checkFlipCondition();
+if instance_exists(obj_dm){
+	checkFlipCondition();
+}

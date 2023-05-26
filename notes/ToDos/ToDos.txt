@@ -2,6 +2,13 @@ R G B -> Scary, Cool, Funny
 
 COMBAT
 
+* Fix dialog overflows DONE
+	* draw_text_ext to do this automatically?
+* Tweak slot placement
+* Visual effect to show slot "lock-in"
+* Working "cross the table" arrows DONE
+* Jostle animation for clickables
+
 * New Player Experience
 	Fight 0
 	
@@ -27,8 +34,8 @@ gadgets, and effects.
 WORLD
 
 * Pause menu
-	* Lock player
-	* Dreamform,Metatools,Esoterica,Save,Done
+	* Lock player DONE
+	* Dreamform,Metatools,Esoterica,Save,Done DONE
 	* Dreamform
 		* See the cards associated with each BP
 	* Metatools
@@ -41,13 +48,13 @@ WORLD
 	* Items
 		* Dream Inventory
 		* Real Inventory
-	* Bodyparts
+	* Bodyparts DONE
 		* simple actually:
 			* bp array
 			* matched array with 0,1,2 states
-	* Game Phase
-	* Room
-	* Location
+	* Game Phase DONE
+	* Room DONE
+	* Location DONE
 * Real dream system
 	* Records
 		* real-world items that let you set spawn point in dreamlands
@@ -59,6 +66,9 @@ WORLD
 		* The Jabberwock
 			* Only happens after Leng reached
 			* Hard combat
-		* Healing
+		* Healing Fountain
 			* Heal all injured body parts
 			
+NITS:
+	Rename:
+		Gold Slam -> Gem Slam

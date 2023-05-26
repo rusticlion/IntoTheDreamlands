@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 cursor = 0;
+locked = false;
 done_building = false;
 
 obj_player.lock();
@@ -16,13 +17,28 @@ menu_options = [
 	"Done"
 ]
 
+lock = function() {
+	visible = false;
+	locked = true;	
+}
+
+unlock = function() {
+	visible = true;
+	alarm[0] = 1;	
+}
 
 click_dreamform = function() {
-	show_debug_message("not implemented!");
+	lock();
+	x_offset = camera_get_view_x(view_camera[0]);
+	y_offset = camera_get_view_y(view_camera[0]);
+	instance_create_layer(x_offset,y_offset,"Overlay",obj_dreamform_menu);
 }
 
 click_metatools = function() {
-	show_debug_message("not implemented!");
+	lock();
+	x_offset = camera_get_view_x(view_camera[0]);
+	y_offset = camera_get_view_y(view_camera[0]);
+	instance_create_layer(x_offset,y_offset,"Overlay",obj_metatools_menu);
 }
 
 click_esoterica = function() {
@@ -34,7 +50,10 @@ click_save = function() {
 }
 
 click_options = function() {
-	show_debug_message("not implemented!");
+	lock();
+	x_offset = camera_get_view_x(view_camera[0]);
+	y_offset = camera_get_view_y(view_camera[0]);
+	instance_create_layer(x_offset,y_offset,"Overlay", obj_options_menu);
 }
 
 click_done = function() {

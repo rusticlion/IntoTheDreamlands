@@ -4,7 +4,7 @@
 if obj_mouse_cursor.holding == self {
 	show_debug_message("clicked with a draggable held");
 	event_user(1)
-	obj_mouse_cursor.holding = "empty";
+	obj_mouse_cursor.holding = noone;
 } else {
 	obj_mouse_cursor.holding = self;
 }

@@ -1,6 +1,10 @@
 /// @description Initialize runtime settings and constants
 // configure window
 window_set_cursor(cr_none);
+
+if global.fullscreen {
+	window_set_fullscreen(true);
+}
 if !window_get_fullscreen()
 {
     window_center();

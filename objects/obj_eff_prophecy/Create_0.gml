@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-hover_text = "Prophetic knowledge\ngrants 1 mystic die"
+hover_text = "Prophetic knowledge grants 1 blue die"
 
 modifyDicePool = function(pool) {
 	if owner.opponent.doomed() {

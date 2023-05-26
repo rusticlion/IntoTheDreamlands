@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-hover_text = "Flight provides two\nreflex dice."
+hover_text = "Flight provides two green dice."
 
 modifyDicePool = function(pool) {
 	repeat (2) {

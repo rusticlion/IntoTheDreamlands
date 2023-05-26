@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-hover_text = "BEAST CLAW\n3 blood"
-blood_value = 3;
+hover_text = "BEAST CLAW\n♥♥"
+blood_value = 2;
 toughness = 1;
 
 bp_class = "LIMB";

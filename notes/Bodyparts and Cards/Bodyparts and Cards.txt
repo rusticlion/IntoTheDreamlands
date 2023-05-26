@@ -74,6 +74,247 @@ Blood: 1
 Paired: While you have two or more of these, gain [FLIGHT].
 SAVAGERY/DIVEBOMB
 
+014 Rotting Ribcage
+Toughness: 6
+Blood: 5
+LURCH/LUNCH
+
+015 Brain Pan
+Toughness: 2
+Blood: 10
+"Go for the head".
+VIRAL BITE/CANNIBAL
+
+016 Dead Arm
+Toughness: 2
+Blood: 1
+SCRATCH/SEIZE
+
+017 Shambling Leg
+Toughness: 2
+Blood: 1
+STUMBLE/LUNGE
+
+018 Hook for a Hand
+Toughness: 5
+Blood: 1
+PARRY/IMPALE
+
+019 Cleaver Arm
+Toughness: 3
+Blood: 2
+CHOP/FRENZY
+
+020 Welding Mask
+Toughness: 5
+Blood: ***
+FACELESS/BLOODLUST
+
+021 Ichthic Head
+Toughness: 3
+Blood: ***
+WATER SPRAY/FISH EYE
+
+022 Finned Foot
+Toughness: 3
+Blood: **
+SLIPPERY/FIN KICK
+
+023 Spear Arm
+Toughness: 4
+Blood: **
+STAB/SWEEP THE LEG
+
+024 Coral Shield
+Toughness: 6
+Blood: X
+BARRIER/BASH
+
+025 Stalk Eyes
+Toughness: 2
+Blood: ***
+HYPNOSIS/STALKER
+
+026 Sea Cloak
+Toughness: 3
+Blood: ***
+SEA SHROUD/TIDAL FORCE
+
+027 Benthic Wand
+Toughness: 1
+Blood: X
+REAPTIDE/CURSE
+
+028 Nacre Charm
+Toughness: 2
+Blood: X
+ABYSS CALL/REGENERATE
+
+029 Ichthic Crown
+Toughness: 5
+Blood: ***
+LORD OF DEEPS/TENTACLIZE
+
+030 Axolotlegs
+Toughness: 3
+Blood: **
+SLIPPERY/LEAP KICK
+
+031 Sea Sword
+Toughness: 6
+Blood: X
+WATER FALL/RISING CARP
+
+032 Straw Leg
+Toughness: 2
+Blood: *
+DO NOTHING/DO NOTHING
+
+033 Straw Arm
+Toughness: 2
+Blood: *
+DO NOTHING/DO NOTHING
+
+034 Stuffed Sack
+Toughness: 2
+Blood: ***
+DO NOTHING/DO NOTHING
+
+035 Bucket Head
+Toughness: 3
+Blood: ***
+DO NOTHING/DO NOTHING
+
+036 Flailing Arm
+Toughness: 2
+Blood: *
+FLAIL/FLAIL
+
+037 Stick Arm
+Toughness: 1
+Blood: X
+DO NOTHING/DO NOTHING
+
+038 Stick Leg
+Toughness: 1
+Blood: X
+DO NOTHING/DO NOTHING
+
+039 Plated Breast
+Toughness: 6
+Blood: ***
+GLEAMING PLATE/DENTED IRON
+
+040 Iron Helm
+Toughness: 5
+Blood: ***
+IRON GAZE/HELMET BASH
+
+041 Buzzsaw Arm
+Toughness: 2
+Blood: **
+RIP AND TEAR/BLUDGEON
+
+042 Unremarkable Arm
+Toughness: 2
+Blood: **
+PUNCH/ARM BLOCK
+
+043 Standard Leg
+Toughness: 2
+Blood: **
+KICK/JUKE
+
+044 Typical Torso
+Toughness: 3
+Blood: ***
+TACKLE/TWIST
+
+045 YOUR HEAD
+Toughness: 2
+Blood: ***
+HEADBUTT/THINK FAST
+
+046 
+* * *
+NPCs:
+Ship:
+	Fishman Thug: Ichthic Head, Broad Shoulders, Finned Foot x 2, Spear Arm, Coral Shield
+		Fighting the Cannoneer on the bottom deck
+	Fishman Shaman: Stalk Eyes, Sea Cloak, Finned Foot x 2, Benthic Wand, Nacre Charm
+		Fighting the Topman on the top deck
+	Fishman Prince: Ichthic Crown, Sea Cloak, Axolotlegs x 2, Sea Sword, Benthic Wand
+		Fighting the Captain in the cabin
+	Kraken: Massive Eye, Fleshy Mantle, Tentacle x 4
+		Lurking in the lower hold
+
+	Pirate Cannoneer: Violent Visage, Broad Shoulders, Torch Carrier, Cutlass Arm, Beefy Leg x 2
+		Fighting the Thug on the bottom deck
+	Pirate Topman: Violent Visage, Nimble Frame, Cutlass Arm, Inked Arm, Leaping Leg x 2
+		Fighting the Shaman on the top deck
+	Pirate Captain: Eyepatch Face, Florid Uniform, Hook for a Hand, Pistolero, Fine Trouser, Pegleg
+		Fighting the Prince in the Cabin
+
+Basement:
+	Zombie: Shambling Leg x 2, Dead Arm x 2, Rotting Ribcage, Brain Pan
+		Buried in random wall
+	Bone Demon: Bare Bones x 2, Rib Cage, Tentacle x 2, Demon Skull
+		Buried in random wall
+	Blood Demon: Tentacle x 2, Rotting Ribcage, Hook for a Hand x 3
+		Summoned by ritual/guards Hell rabbithole
+	Tentacle Thing: Tentacle x 3, Hook for a Hand, Stalk Eyes, Axolotlegs
+		Inside leaky pipe/guards Atlantis rabbithole
+	Murderer: Shambling Leg x 2, Broad Shoulders, Hook for a Hand, Cleaver Arm, Welding Mask
+		Behind locked door/guards School rabbithole
+
+School:
+	Total Dummy: Straw Leg x 2, Straw Arm x 2, Stuffed Sack, Stuffed Head
+		Attack class
+	Whap-o-Matic: Straw Leg x 2, Flailing Arm x 2, Stuffed Sack, Stuffed Head
+		Defense class
+	Armored Dummy: Stick Leg x 2, Stick Arm x 2, Plated Breast, Iron Helm
+		Red class
+	Chainsaw-o-Matic: Straw Leg x 2, Buzzsaw Arm x 2, Stuffed Sack, Stuffed Head
+		Green class
+	No Dummy: Lack of Leg x 2, Absent Arm x 2, Non-Chest, Hypothetical Head
+		BP Trait class
+	
+	Additional class resources:
+		Blue class can use Whap-o-Matic. 
+		Swapper class can use Chainsaw-o-Matic.
+		Integration class can use Chainsaw-o-Matic OR Armored Dummy
+		Heart Points class can use Armored Dummy
+		
+		Dreamform 101 Basics
+			Menu-based
+		Dice 101 Attacking and Defending
+			Whap-o-Matic
+		Cards 101 Deck
+			Total Dummy
+		
+		Dice 201 Red Dice
+			Armor Dummy
+		Dice 202 Green Dice
+			Chainsaw-o-Matic
+		Dice 203 Blue Dice
+			Whap-o-Matic
+		Metatooling 201 Intro to Metatools
+			Chainsaw-o-Matic
+		Metatooling 202 Intro to Factors
+			Armor Dummy
+		Dreamform 201 Absorption
+			Chainsaw-o-Matic OR Armor Dummy
+		Cards 201 Flipping
+			Chainsaw-o-Matic
+			
+		# classrooms shut off! at least at first
+		Dice 301 Overload
+			Cast Iron Dummy
+		Metatooling 301 Configuration
+			Menu-based
+		Dreamform 301 Status and Traits
+			No Dummy
+		
 
 * * *
 
@@ -225,7 +466,108 @@ MOVES
 	3R 2G
 	Flip if you do not have [FLIGHT].
 	
+"Shamble On" 014
+	LURCH (G)
+	2G 2A
+	Flip if blood < 7
 	
+	LUNCH (G)
+	2G
+	Heal 2 Blood
+	Flip if blood == 10
+
+"Brain Stew" 015
+	CANNIBAL (R)
+	1R 2A
+	Heal for blood dealt
+	Deal [INFECTED]
+	Flip if no wounded enemy part
+
+	VIRAL BITE (R)
+	1R6
+	Deal [INFECTED]
+	Flip if enemy has a wounded part.
+	
+"Stumbling Scratch" 016
+	SCRATCH (X)
+	2A
+	Deal [INFECTED]
+	
+	SEIZE (X)
+	1A5
+
+"Septic Shuffle" 017
+	STUMBLE (X)
+	2D
+	
+	LUNGE (X)
+	1A 1R
+	
+"The Hahyook" 018
+	PARRY (G)
+	1D6, 1G5
+
+	IMPALE (R)
+	1A, 1R1, Brutal
+	
+"Chop Suey" 019
+	CHOP (R)
+	2R
+	
+	FRENZY (R)
+	rR
+	
+"Corpse Smith"
+	FACELESS (W)
+	6Wr
+	Blood -> 3
+	
+	BLOODLUST (R)
+	2R
+	Max out Red factor
+	
+"Fishy Fighting"
+	WATER GUN (B)
+	3B4
+	
+	FISH EYE (B)
+	bW4
+	Max out Blue factor
+	
+"Le Fin"
+	SLIPPERY (B)
+	(1+b)G
+	
+	FIN KICK (B)
+	bA + rR
+	
+"Spearfishing"
+	STAB (R)
+	1R5
+
+	SWEEP THE LEG (B)
+	2B6
+	Autotarget slot 5 and 6
+	
+"Tidal Defense"
+	BARRIER (G)
+	1G2, 1G3, 1G4
+	
+	BASH (R)
+	gR*, gG2
+	
+"Stalker"
+	HYPNOSIS (B)
+	2B(b*3)
+	if block or damage succeeds, inflict HYPNOTIZED
+	
+	REGENERATE (B)
+	3D
+	Renew Head
+	
+"Wave Master"
+
+
 * * *
 
 Effects
@@ -239,6 +581,8 @@ Effects
 	INVISIBLE: +5 to natural defense. Cancelled if wounded.
 	
 	MANTIS STYLE: You are death and death is always waiting.
+	
+	INFECTION: Turns you into a zombie one part at a time.
 
 
 	STUNNED: You can't attack or defend with dice. Cancelled after one turn.

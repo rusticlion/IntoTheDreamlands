@@ -7,7 +7,7 @@ updated_difficulty = difficulty;
 
 
 apply = function(die) {
-	if (contains != noone && die.image_blend != c_green) {
+	if (contains != noone && die.image_blend != c_lime) {
 		return false; // If filled, reject all except Green
 	}
 	if (die.object_index == obj_blk_die || die.image_blend == c_red) {
@@ -19,9 +19,8 @@ apply = function(die) {
 	contains = die;
 	
 	die.lock();
-	die.image_angle = 45;
-	die.y = y+8;
-	die.x = x;
+	die.y = y+1;
+	die.x = x+2;
 	updated_difficulty = difficulty + die.shows;
 	die.updateValue(updated_difficulty);
 	difficulty = updated_difficulty;

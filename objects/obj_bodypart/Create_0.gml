@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 event_inherited();
-
+show_debug_message("building a body part at "+string(x)+ " "+string(y));
 hp = 2;
 available_to_clash = true;
 attack_slot = noone;
@@ -55,7 +55,6 @@ damage = function() {
 	}
 	hp = clamp(hp-dph, 0, 2);
 	if (hp == 1) {
-		controller.blood -= 1;
 		image_blend = c_yellow;
 	} else {
 		controller.blood -= blood_value;
@@ -75,7 +74,11 @@ notAttacked = function() {
 }
 
 spawnSlots = function() {
-	if controller == obj_dm.player1 {
+	show_debug_message($"Spawning slots for {object_get_name(object_index)}");
+	show_debug_message(controller);
+	show_debug_message(obj_dm.player1);
+	if controller.id == obj_dm.player1.id {
+		show_debug_message("Slot belongs to p1");
 		bp_for_slot = self
 		show_debug_message("Own Class: ")
 		show_debug_message(object_get_name(bp_for_slot.object_index))
@@ -85,6 +88,7 @@ spawnSlots = function() {
 			self.attack_slot = instance_create_layer(x - 32, y - 130, "Slots", obj_attack_slot, {bodypart: bp_for_slot});
 		}
 	} else {
+		show_debug_message("Slot belongs to p2");
 		bp_for_slot = self
 		self.defense_slot = instance_create_layer(x + 32, y-2, "Slots", obj_defense_slot, {bodypart: bp_for_slot});
 		self.attack_slot = instance_create_layer(x + 48, y + 130, "Slots", obj_attack_slot, {bodypart: bp_for_slot});
@@ -107,6 +111,20 @@ switchOffSplendor = function() {
 respawnBodypart = function() {
 	controller.blood += blood_value;
 	hp = 2;
+	if (attack_slot != noone) {
+		instance_destroy(attack_slot);
+	}
+	if (defense_slot != noone) {
+		instance_destroy(defense_slot);
+	}
 	spawnSlots();
 	image_blend = noone;
+}
+
+heal = function(value) {
+	var previous_hp = hp;
+	hp = clamp(hp+value, 0, 2);
+	if (previous_hp == 0 && hp != 0) {
+		spawnSlots();	
+	}
 }

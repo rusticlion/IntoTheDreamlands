@@ -5,8 +5,8 @@ event_inherited();
 a_sprite = spr_card_004_a_bite;
 b_sprite = spr_card_004_b_fire_breath;
 
-side_a = instance_create_layer(0,0, "Pieces", obj_card_004_a_bite);
-side_b = instance_create_layer(0,0, "Pieces", obj_card_004_b_fire_breath);
+side_a = instance_create_layer(0,0, "Overlay", obj_card_004_a_bite);
+side_b = instance_create_layer(0,0, "Overlay", obj_card_004_b_fire_breath);
 
 upside = side_a;
 
