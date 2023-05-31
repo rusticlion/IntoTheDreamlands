@@ -50,6 +50,13 @@ getBody = function(ai_opponent) {
 		break;
 		case "ZOMBIE":
 			body = [15, 14, 16, 16, 17, 17];
+		break;
+		case "MURDERER":
+			body = [20,8,18,19,17,17];
+		break;
+		case "TOTAL DUMMY":
+			body = [35,34,33,33,32,32];
+		break;
 		default:
 		break;
 		

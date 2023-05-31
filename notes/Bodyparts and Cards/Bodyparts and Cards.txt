@@ -163,7 +163,7 @@ SLIPPERY/LEAP KICK
 031 Sea Sword
 Toughness: 6
 Blood: X
-WATER FALL/RISING CARP
+FALLING RIVER/RISING CARP
 
 032 Straw Leg
 Toughness: 2
@@ -503,7 +503,7 @@ MOVES
 	LUNGE (X)
 	1A 1R
 	
-"The Hahyook" 018
+"The Hyook" 018
 	PARRY (G)
 	1D6, 1G5
 
@@ -565,9 +565,87 @@ MOVES
 	3D
 	Renew Head
 	
-"Wave Master"
+"Wave Master" 026
 
+"Nothing Doing" 032
+	DO NOTHING (W)
+	...
 
+"Nothing Doing" 033
+	DO NOTHING (W)
+	...
+
+"Nothing Doing" 034
+	DO NOTHING (W)
+	...
+
+"Nothing Doing" 035
+	DO NOTHING (W)
+	...
+
+"Flailed Out" 036
+	FLAIL (W)
+	1A3
+
+"Nothing Doing" (Stick Up) 037
+
+"Nothing Doing" 038
+
+"Knight Moves" 039
+	GLEAMING PLATE (W)
+	2D6
+	
+	DENTED IRON (W)
+	2D4
+
+"Helmet Hero" 040
+	IRON GAZE (W)
+	1D6
+	Inflict Frightened
+	
+	HELMET BASH (W)
+	1A6
+
+"Buzz Cut" 041
+	RIP AND TEAR (W)
+	1A10
+	
+	BLUDGEON
+	1A4
+
+"Boxing" 042
+	ARM BLOCK (W)
+	1D
+	PUNCH (W)
+	2A
+	
+	Flip if R > 0
+
+"Footwork" 043
+	KICK (W)
+	1A
+	JUKE (W)
+	2D
+	
+	Flip if G > 0
+
+"Core Strength" 044
+	TACKLE (W)
+	1A
+	Add R
+	
+	TWIST (W)
+	1D
+	ADD G
+
+"Situational Awareness" 045
+	HEADBUTT (W)
+	1A
+	THINK FAST (W)
+	Swap for the top card of the deck when you clash.
+	
+	Flip if B > 0
+	
 * * *
 
 Effects
@@ -583,10 +661,24 @@ Effects
 	MANTIS STYLE: You are death and death is always waiting.
 	
 	INFECTION: Turns you into a zombie one part at a time.
-
+	
+	FRENZY: Replace all Defense dice with Reds. (Disable Metatools?)
+	
+	FRIGHTENED: Lose the highest die from your dice pool.
+	Cancelled after dealing damage.
 
 	STUNNED: You can't attack or defend with dice. Cancelled after one turn.
 	
 	DOOM: Something bad might happen. Place a 6 here to cancel it.
 
-
+Traits:
+	SPLENDOR: Same as status, but localized.
+	
+	INVISIBLE: Same as status, but localized.
+	
+	ELUSIVE: Cannot be struck with dice greater than 3.
+	
+	MASSIVE: Cannot be struck with dice less than 4.
+	
+	BREAKDOWN: Replaced with a different BP when maimed.
+	

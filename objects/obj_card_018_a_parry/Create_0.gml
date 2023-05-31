@@ -22,7 +22,7 @@ cleanupEffect = function(card) {
 }
 
 checkFlipCondition = function(card) {
-	if (card.controller.r_factor < 1)
+	if (card.controller.r_factor > 1)
 	{
 		with(card) { event_user(0) }
 	}
