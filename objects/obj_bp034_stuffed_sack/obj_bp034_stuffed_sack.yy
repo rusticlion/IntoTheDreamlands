@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "limb",
-    "path": "folders/Objects/combat/bodyparts/limb.yy",
+    "name": "body",
+    "path": "folders/Objects/combat/bodyparts/body.yy",
   },
   "parentObjectId": {
     "name": "obj_bodypart",
@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_bp_straw_leg",
-    "path": "sprites/spr_bp_straw_leg/spr_bp_straw_leg.yy",
+    "name": "spr_bp_stuffed_sack",
+    "path": "sprites/spr_bp_stuffed_sack/spr_bp_stuffed_sack.yy",
   },
   "spriteMaskId": null,
   "visible": true,

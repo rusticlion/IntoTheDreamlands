@@ -4,7 +4,7 @@ moving = false;
 momentum = 0;
 image_speed = 0;
 win_count = 0;
-dreamform = "BEAST MAN";
+dreamform = "BASIC PERSON";
 
 equipped_item = noone;
 realworld_items = [];

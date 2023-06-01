@@ -1,0 +1,11 @@
+1: Scratch from a blade. A child's tackle.
+2: A forceful shove. A painful grip. A small animal bite.
+3: Solid punch or kick from an adult. A moderate cut.
+4: Solid blow with a blunt instrument. Full-on body slam. A moderate fall.
+5: Solid blow with a bladed weapon. Curb stomp. Second-story fall. Strong animal bite.
+6: Through-and-through blow with a bladed weapon. Medium-caliber gunshot.
+7: Crushing blow with an axe or hammer. High fall. Stampeding animals.
+8: High-caliber gunshot. Unnaturally powerful hammer blow. Shark's bite.
+9: Fragmentation grenade. Massive decompression. Chainsaw strike.
+!: Cannon fire. Stampeding giants. Falling boulders.
+!!: Bomb detonation. Burning in lava. Falling skyscrapers.

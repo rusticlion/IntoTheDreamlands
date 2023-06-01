@@ -10,6 +10,10 @@ modifyDicePool = function(pool) {
 	return pool;
 }
 
+clashEffect = function() {
+	
+}
+
 cleanupEffect = function() {
 	
 }

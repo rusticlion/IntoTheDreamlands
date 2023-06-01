@@ -8,8 +8,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "body",
-    "path": "folders/Objects/combat/bodyparts/body.yy",
+    "name": "head",
+    "path": "folders/Objects/combat/bodyparts/head.yy",
   },
   "parentObjectId": {
     "name": "obj_bodypart",

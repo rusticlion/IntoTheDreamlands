@@ -10,6 +10,8 @@ dialog_box = instance_create_layer(x_offset+6, y_offset+global.tile_size*6+8, "M
 bodyparts = [];
 deck = [];
 for (var i = 0; i < 6; i++) {
+	
+show_debug_message($"{obj_player.bodyparts[i]} {global.bodypart_index[obj_player.bodyparts[i]]}");
 	var bp = instance_create_layer(
 		x_offset+(13*global.tile_size)+2,
 		y_offset+(i*global.tile_size)+2, //magic number p1_y_offset

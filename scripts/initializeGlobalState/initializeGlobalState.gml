@@ -28,22 +28,31 @@ obj_bp017_shambling_leg,
 obj_bp018_hook_for_a_hand,
 obj_bp019_cleaver_arm,
 obj_bp020_welding_mask,
-noone,
-noone,
-noone,
-noone,
-noone,
-noone,
-noone,
-noone,
-noone,
-noone,
-noone,
-noone,
+noone, //obj_bp_021
+noone, //obj_bp_022
+noone, //obj_bp_023
+noone, //obj_bp_024
+noone, //obj_bp_025
+noone, //obj_bp_026
+noone, //obj_bp_027
+noone, //obj_bp_028
+noone, //obj_bp_029
+noone, //obj_bp_030
+noone, //obj_bp_031
 obj_bp032_straw_leg,
 obj_bp033_straw_arm,
 obj_bp034_stuffed_sack,
-obj_bp035_bucket_head
+obj_bp035_bucket_head,
+obj_bp036_flailing_arm, //obj_bp_036
+obj_bp037_stick_arm, //obj_bp_037
+obj_bp038_stick_leg, //obj_bp_038
+obj_bp039_plated_breast, //obj_bp_039
+obj_bp040_iron_helm, //obj_bp_040
+obj_bp041_buzzsaw_arm, //obj_bp_041
+obj_bp042_average_arm,
+obj_bp043_standard_leg,
+obj_bp044_typical_torso,
+obj_bp045_your_head
 ]
 
 global.card_index = [
@@ -79,11 +88,20 @@ noone,
 noone,
 noone,
 noone,
-noone,
 obj_card_032_nothing_doing,
 obj_card_032_nothing_doing,
 obj_card_032_nothing_doing,
-obj_card_032_nothing_doing
+obj_card_032_nothing_doing,
+obj_card_036_flailed_out,
+obj_card_032_nothing_doing,
+obj_card_032_nothing_doing,
+obj_card_039_knight_moves,
+obj_card_040_helmet_hero,
+obj_card_041_buzz_cut,
+obj_card_042_boxing,
+obj_card_043_footwork,
+obj_card_044_core_strength,
+obj_card_045_situational_awareness
 ]
 
 global.gadget_index = [

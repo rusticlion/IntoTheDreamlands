@@ -1,19 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_bp016_dead_arm163",
+  "name": "obj_card_041_b_bludgeon",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "limb",
-    "path": "folders/Objects/combat/bodyparts/limb.yy",
+    "name": "cards",
+    "path": "folders/Objects/combat/cards.yy",
   },
   "parentObjectId": {
-    "name": "obj_bodypart",
-    "path": "objects/obj_bodypart/obj_bodypart.yy",
+    "name": "obj_card_side",
+    "path": "objects/obj_card_side/obj_card_side.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -30,10 +30,7 @@
   "physicsStartAwake": true,
   "properties": [],
   "solid": false,
-  "spriteId": {
-    "name": "spr_bp_dead_arm",
-    "path": "sprites/spr_bp_dead_arm/spr_bp_dead_arm.yy",
-  },
+  "spriteId": null,
   "spriteMaskId": null,
   "visible": true,
 }

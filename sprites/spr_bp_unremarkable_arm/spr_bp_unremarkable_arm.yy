@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_bp_unremarkable_arm",
-  "bbox_bottom": 1023,
+  "bbox_bottom": 11,
   "bbox_left": 0,
-  "bbox_right": 1023,
+  "bbox_right": 27,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -17,7 +17,7 @@
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 1024,
+  "height": 12,
   "HTile": false,
   "layers": [
     {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"d89609ba-229b-412a-962a-705f5104463c","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
@@ -149,5 +149,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 1024,
+  "width": 28,
 }

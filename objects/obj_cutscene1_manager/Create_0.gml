@@ -222,10 +222,10 @@ waitForPlayerCharSelect = function() {
 }
 
 endCutscene = function() {
-	global.dreamforms_unlocked = ["BEAST MAN"];
+	global.dreamforms_unlocked = ["BASIC PERSON"];
 	global.realworld_items = [];
 	global.dreamlands_items = [];
-	global.equipped_bodyparts = [3, 8, 1, 1, 1, 1]; // index numbers for initial dreamform
+	global.equipped_bodyparts = [45,44,42,42,43,43]; // index numbers for initial dreamform
 	global.equipped_bodyparts_hitpoints = [2, 2, 2, 2, 2, 2]; // full health BPs
 	global.saved_x_position = 7*global.tile_size;
 	global.saved_y_position = 3*global.tile_size;

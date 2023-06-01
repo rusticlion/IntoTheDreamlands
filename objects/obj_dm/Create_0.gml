@@ -196,6 +196,9 @@ goToClash = function() {
 	game_view = "clash";
 	panToMiddle();
 	
+	player1.active_card.clashEffect();
+	player2.active_card.clashEffect();
+	
 	if (!player1.hasEffect(obj_eff_stunned)) {
 		player1.translateDicePool();
 	}
@@ -208,9 +211,6 @@ goToClash = function() {
 		player2.dice_pool[i].live = false;
 	}
 	
-	player1.active_card.clashEffect();
-	player2.active_card.clashEffect();
-	
 	// This is just the AI playing its turn, not phase
 	// transition logic
 	if (!player2.hasEffect(obj_eff_stunned)) {
@@ -218,6 +218,8 @@ goToClash = function() {
 		player2.AIAssignDice_DefendHeadAndBody();
 	}
 	
+	// put in some logic to call "after dice pool is rolled" fx
+	// the main example being "Frightened" status effect
 }
 
 goToBlows = function() {
@@ -284,8 +286,8 @@ cleanupDuel = function() {
 goToLoss = function() {
 	cleanupDuel();
 	obj_player.win_count = 0;
-	obj_player.dreamform = "BEAST MAN";
-	global.dreamforms_unlocked = ["BEAST MAN"];
+	obj_player.dreamform = "BASIC PERSON";
+	global.dreamforms_unlocked = ["BASIC PERSON"];
 	phase = "LOSS";
 	obj_player.bodyparts_hp = [2,2,2,2,2,2];
 	Save("player1");

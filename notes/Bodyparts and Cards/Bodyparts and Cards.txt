@@ -565,7 +565,12 @@ MOVES
 	3D
 	Renew Head
 	
-"Wave Master" 026
+"Wave Rider" 026
+	SEA SHROUD (G)
+	(b+1)D
+	
+	TIDAL WAVE (B)
+	(b+1)A (b+1)D
 
 "Nothing Doing" 032
 	DO NOTHING (W)
@@ -600,11 +605,13 @@ MOVES
 
 "Helmet Hero" 040
 	IRON GAZE (W)
-	1D6
+	2D3
 	Inflict Frightened
 	
 	HELMET BASH (W)
 	1A6
+	
+	Flip depending on whether opponent is Frightened
 
 "Buzz Cut" 041
 	RIP AND TEAR (W)

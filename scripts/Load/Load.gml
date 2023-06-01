@@ -60,7 +60,7 @@ function Load(player_id){
 	global.fullscreen = ini_read_real(player_id, "fullscreen", false);
 	
 	// unpack and load lists 
-	global.dreamforms_unlocked = unpackStringList(player_id, "dreamforms_unlocked", "BEAST MAN");
+	global.dreamforms_unlocked = unpackStringList(player_id, "dreamforms_unlocked", "BASIC PERSON");
 	global.equipped_bodyparts = unpackRealList(player_id, "equipped_bodyparts", ""); // give a better default
 	global.equipped_bodyparts_hitpoints = unpackRealList(player_id, "equipped_bodyparts_hitpoints", "");
 	global.equipped_gadgets = unpackGadgets(player_id, "equipped_gadgets", "");

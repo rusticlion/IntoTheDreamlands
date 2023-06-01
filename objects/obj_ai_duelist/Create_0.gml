@@ -19,7 +19,7 @@ equipped_gadgets = [
 		yy: 8*global.tile_size,
 		gadget_index: 12
 	}
-]
+];
 
 getBody = function(ai_opponent) {
 	switch (ai_opponent)
@@ -46,7 +46,7 @@ getBody = function(ai_opponent) {
 			body = [5,10,1,1,1,2];
 		break;
 		case "BEAST MAN":
-			body = [3,8,1,1,1,1]
+			body = [3,8,1,1,1,1];
 		break;
 		case "ZOMBIE":
 			body = [15, 14, 16, 16, 17, 17];
@@ -56,6 +56,24 @@ getBody = function(ai_opponent) {
 		break;
 		case "TOTAL DUMMY":
 			body = [35,34,33,33,32,32];
+		break;
+		case "BLOOD DEMON":
+			body = [18, 14, 18, 3, 18, 3];
+		break;
+		case "BASIC PERSON":
+			body = [45,44,42,42,43,43]
+		break;
+		case "WHAP-O-MATIC":
+			body = [35,34,36,36,32,32];
+		break;
+		case "ARMORED DUMMY":
+			body = [40,39,37,37,38,38];
+		break;
+		case "CHAINSAW-O-MATIC":
+			body = [35,34,41,41,32,32];
+		break;
+		case "PROFESSOR DUMMY":
+			body = [40,39,41,37,38,38];
 		break;
 		default:
 		break;
