@@ -9,10 +9,12 @@ function Save(player_id){
 	function packItems(player_id, item_array, item_list_name) {
 		var string_representations = [];
 		for (var i=0;i<array_length(item_array);i++) {
-			var item_name = item_array[i].name;
-			array_push(string_representations, item_name);
+			
+			var item_index = item_array[i].item_index;
+			array_push(string_representations, item_index);
 		}
 		var stringified_list = string_join_ext(",", string_representations);
+		show_debug_message($"Packed some items: {stringified_list}\nto {item_list_name}");
 		ini_write_string(player_id, item_list_name, stringified_list);
 	}
 	
@@ -48,6 +50,8 @@ function Save(player_id){
 	packList(player_id, obj_player.bodyparts, "equipped_bodyparts");
 	packList(player_id, obj_player.bodyparts_hp, "equipped_bodyparts_hitpoints");
 	
+	show_debug_message($"Saving these RW items: {obj_player.realworld_items}");
+	show_debug_message($"Saving these DL items: {obj_player.dreamlands_items}");
 	packItems(player_id, obj_player.realworld_items, "realworld_items");
 	packItems(player_id, obj_player.dreamlands_items, "dreamlands_items");
 	

@@ -9,15 +9,19 @@ function Load(player_id){
 	}
 	function unpackRealList(player_id,list_name,default_value="") {
 		var raw_list = ini_read_string(player_id, list_name, default_value);
-		var str_array = string_split(raw_list, ",");
-		return array_map(str_array, real);
+		if raw_list == "" {
+			return [];	
+		} else {
+			var str_array = string_split(raw_list, ",");
+			return array_map(str_array, real);
+		}
 	}
 	function unpackItems(player_id, item_list_name, default_value="") {
-		var item_string_list = unpackStringList(player_id, item_list_name, default_value);
+		var item_index_list = unpackRealList(player_id, item_list_name, default_value);
 		var holding_list = [];
-		for (var i=0;i<array_length(item_string_list);i++) {
-			var item_obj_index = getItemObject(item_string_list);
-			if (item_obj_index != obj_debug_duck) {
+		for (var i=0;i<array_length(item_index_list);i++) {
+			var item_obj_index = item_index_list[i];
+			if (item_obj_index != 0) {
 				array_push(holding_list, item_obj_index);
 			}
 		}

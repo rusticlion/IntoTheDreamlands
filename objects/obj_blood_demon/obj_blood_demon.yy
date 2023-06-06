@@ -32,8 +32,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_murderer",
-    "path": "sprites/spr_murderer/spr_murderer.yy",
+    "name": "spr_blood_demon",
+    "path": "sprites/spr_blood_demon/spr_blood_demon.yy",
   },
   "spriteMaskId": null,
   "visible": true,

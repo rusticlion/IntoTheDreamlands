@@ -1,10 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-unrevealed = true;
+discovered = true; // but will be false when puzzle implemented!
 dialog_active = false;
-murderer = self;
+blood_demon = self;
 
 victoryHandler = function() {
 	show_debug_message("Triggered the victory callback for the Murderer fight");
-	murderer.sprite_index = spr_debug_duck;
+	blood_demon.sprite_index = spr_debug_duck;
+	instance_create_layer(x,y,"BGInstances", obj_rabbithole);
+	instance_destroy(self);
 }

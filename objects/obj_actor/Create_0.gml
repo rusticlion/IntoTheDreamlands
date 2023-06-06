@@ -17,3 +17,10 @@ cooldown = function(){
 	ready = false;
 	alarm[1] = 10;
 }
+
+dialog_active = false;
+dialog_pages = ["Default Actor Dialog"];
+dialog_choices = [];
+choiceHandler = function(choice) {
+	show_debug_message($"A debug message from {object_index}")
+}

@@ -222,6 +222,7 @@ waitForPlayerCharSelect = function() {
 }
 
 endCutscene = function() {
+	
 	global.dreamforms_unlocked = ["BASIC PERSON"];
 	global.realworld_items = [];
 	global.dreamlands_items = [];

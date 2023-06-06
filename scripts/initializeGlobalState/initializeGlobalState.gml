@@ -121,6 +121,13 @@ obj_blue_catalyst_crystal,
 obj_swapper
 ]
 
+global.item_index = [
+noone,
+obj_esoterica,
+obj_shovel,
+obj_devils_brush
+]
+
 
 global.equipped_bodyparts = [];
 global.equipped_gadgets = [];
@@ -132,6 +139,6 @@ global.duel_parameters = {
 
   // config options: these should really be loaded as part of "Game"
   // when I get around to saving and loading them
-global.endless_mode = true;
-global.mouse_enabled = false;
+global.endless_mode = false;
+global.mouse_enabled = true;
 global.fullscreen = false;

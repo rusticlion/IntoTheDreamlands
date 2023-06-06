@@ -289,9 +289,7 @@ goToLoss = function() {
 	obj_player.dreamform = "BASIC PERSON";
 	global.dreamforms_unlocked = ["BASIC PERSON"];
 	phase = "LOSS";
-	obj_player.bodyparts_hp = [2,2,2,2,2,2];
-	Save("player1");
-	room_goto(Bedroom);
+	obj_player.should_wake = true;
 }
 
 goToTie = function() {
@@ -300,8 +298,7 @@ goToTie = function() {
 	for(var i=0; i<array_length(player1.bodyparts); i++) {
 		obj_player.bodyparts_hp[i] = player1.bodyparts[i].hp;
 	}
-	Save("player1");
-	room_goto(Bedroom);
+	obj_player.should_wake = true;
 }
 
 goToWin = function() {

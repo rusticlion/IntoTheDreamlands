@@ -5,17 +5,22 @@ momentum = 0;
 image_speed = 0;
 win_count = 0;
 dreamform = "BASIC PERSON";
+should_wake = false;
 
 equipped_item = noone;
 realworld_items = [];
 dreamlands_items = [];
 
 for (var i=0;i<array_length(global.realworld_items);i++) {
-	var reified_item = instance_create_layer(0,0,layer,item_index);
+	var loaded_item_index = global.realworld_items[i];
+	var item_object_index = global.item_index[loaded_item_index];
+	var reified_item = instance_create_layer(0,0,layer,item_object_index);
 	array_push(realworld_items, reified_item);
 }
 for (var i=0;i<array_length(global.dreamlands_items);i++) {
-	var reified_item = instance_create_layer(0,0,layer,item_index);
+	var loaded_item_index = global.dreamlands_items[i];
+	var item_object_index = global.item_index[loaded_item_index];
+	var reified_item = instance_create_layer(0,0,layer,item_object_index);
 	array_push(dreamlands_items, reified_item);
 }
 
@@ -46,6 +51,8 @@ sprite_index = down_sprite;
 
 bodyparts = loadBodyFromGlobal();
 bodyparts_hp = loadBodyHPFromGlobal();
+
+default_bodyparts = [45,44,42,42,43,43];
 var default_gadgets = [
 	{
 		xx: 1*global.tile_size,

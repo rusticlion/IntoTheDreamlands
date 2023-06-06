@@ -3,3 +3,7 @@
 if (obj_player.y < global.tile_size*6) {
 	camera_set_view_speed(camera, 0, 2);
 }
+
+if (obj_player.should_wake) {
+	wakeUp();	
+}

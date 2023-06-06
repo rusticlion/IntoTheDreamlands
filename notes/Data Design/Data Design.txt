@@ -19,4 +19,14 @@ entities instead, usually obj_player, and we write them to global between rooms.
 We mirror global to the .ini when we want to save, and we load the .ini into global when
 we load. 
 
-Maybve we don't really need to use global for save buffering and should just 
+Maybe we don't really need to use global for save buffering and should just 
+
+Room Persistence
+
+By default, rooms are not persistent: returning to a room on a different night,
+or even by circling back through the web,  will result in a fresh iteration of the room
+(rerunning its room creation code).
+The exception is whichever room the player currently occupies, which IS persistent: this
+is necessary to maintain state when switching to and from the Duel room.
+Rabbitholes and the Wakeup scene handle un-persisting a room which is being departed.
+Room creation code handles setting a room to persist

@@ -9,7 +9,7 @@ getDice = function(controller = noone) {
 			array_push(pool, defense_die);
 		}
 		repeat (1) {
-			green_die = instance_create_layer(0, 0, "Pieces", obj_white_die, {live: false, shows: 3});
+			green_die = instance_create_layer(0, 0, "Pieces", obj_green_die, {live: false, shows: 3});
 			array_push(pool, green_die);
 		}
 	}
