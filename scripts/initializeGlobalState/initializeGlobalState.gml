@@ -127,7 +127,9 @@ obj_item001_esoterica,
 obj_item002_shovel,
 obj_item003_devils_brush,
 obj_item004_blindfold,
-obj_item005_key
+obj_item005_key,
+obj_item006_wrench,
+obj_item007_bolt_cutters
 ]
 
 
@@ -144,3 +146,5 @@ global.duel_parameters = {
 global.endless_mode = false;
 global.mouse_enabled = true;
 global.fullscreen = false;
+
+global.devmode = true; // convenience features for bypassing puzzles

@@ -35,13 +35,15 @@
 	shuffled_cracks[2].y = global.tile_size*6;
 
 // Set up spooky spot
-
+	spooky_spot = instance_create_layer(4*global.tile_size,3*global.tile_size,"BGInstances",obj_spooky_spot);
 // Set up cross
 	cross = instance_create_layer(7*global.tile_size,0,"BGInstances",obj_st_andrews_cross)
 // Set up buckets
-
+	bucket = instance_create_layer(8*global.tile_size, 1*global.tile_size, "BGInstances", obj_blood_bucket);
 // Set up desk
-
+	left_worktable = instance_create_layer(9*global.tile_size, 0, "Collision", obj_basement_workbench_left);
+	right_worktable = instance_create_layer(10*global.tile_size, 0, "Collision", obj_basement_workbench_right);
 // Set up cutting table
-
+	surgery_table = instance_create_layer(11*global.tile_size, 3*global.tile_size, "Collision", obj_surgery_table);
 // Set up door
+	basement_door = instance_create_layer(11*global.tile_size, 0, "BGInstances", obj_basement_door);

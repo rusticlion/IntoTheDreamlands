@@ -7,6 +7,10 @@ r_factor = 0;
 g_factor = 0;
 b_factor = 0;
 
+displayed_r = r_factor;
+displayed_g = g_factor;
+displayed_b = b_factor;
+
 r_dice_modifier = 0;
 g_dice_modifier = 0;
 b_dice_modifier = 0;

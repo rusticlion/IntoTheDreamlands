@@ -2,15 +2,36 @@
 // You can write your code in this editor
 draw_set_color(c_white);
 draw_set_font(KenneyMini);
+if displayed_r < r_factor*50 {
+	displayed_r+=5;	
+} else if displayed_r > r_factor*50 {
+	displayed_r-=5;
+}
+if displayed_g < g_factor*50 {
+	displayed_g+=5;
+} else if displayed_g > g_factor*50 {
+	displayed_g-=5;	
+}
+if displayed_b < b_factor*50 {
+	displayed_b+=5;
+} else if displayed_b > b_factor*50 {
+	displayed_b-=5;	
+}
 if (obj_dm.player1.id == self.id) {
-	draw_healthbar(0, 342, 28, 344, r_factor*50, c_black, c_red, c_red, 0, false, false);
-	draw_healthbar(0, 374, 28, 376, g_factor*50, c_black, c_lime, c_lime, 0, false, false);
-	draw_healthbar(0, 406, 28, 408, b_factor*50, c_black, c_blue, c_blue, 0, false, false);
-		for (var i=0;i<blood;i++) {
+	draw_healthbar(0, 342, 28, 344, displayed_r, c_black, c_red, c_red, 0, false, false);
+	draw_healthbar(0, 374, 28, 376, displayed_g, c_black, c_lime, c_lime, 0, false, false);
+	draw_healthbar(0, 406, 28, 408, displayed_b, c_black, c_blue, c_blue, 0, false, false);
+	for (var i=0;i<blood;i++) {
+		if (obj_dm.phase == "PLAN") {
+			var board_x_placement = global.tile_size*(9+i), 
+			var board_y_placement = global.tile_size*25;
+			draw_sprite(spr_heart_point, i, board_x_placement, board_y_placement)
+		} else {
 			var center_x_placement = global.tile_size*(12+i), 
 			var center_y_placement = global.tile_size*18+global.tile_size/2;
 			draw_sprite(spr_heart_point, i, center_x_placement, center_y_placement)
 		}
+	}
 	draw_text(2, 289, "R");
 	draw_set_color(c_red);
 	draw_text(2, 305, string(r_factor));
@@ -29,8 +50,17 @@ if (obj_dm.player1.id == self.id) {
 	draw_healthbar(239, 86, 179, 88, r_factor*50, c_black, c_red, c_red, 0, false, false);
 	draw_healthbar(239, 118, 179, 120, g_factor*50, c_black, c_lime, c_lime, 0, false, false);
 	draw_healthbar(239, 150, 179, 152, b_factor*50, c_black, c_blue, c_blue, 0, false, false);
-		hp_text = string(blood)+"/3";
-		draw_text(6, 168, hp_text);
+	for (var i=0;i<blood;i++) {
+		if (obj_dm.phase == "PLAN") {
+			var board_x_placement = global.tile_size*(3+i), 
+			var board_y_placement = global.tile_size*4;
+			draw_sprite(spr_heart_point, i, board_x_placement, board_y_placement)
+		} else {
+			var center_x_placement = global.tile_size*i, 
+			var center_y_placement = global.tile_size*10+global.tile_size/2;
+			draw_sprite(spr_heart_point, i, center_x_placement, center_y_placement)
+		}
+	}
 	draw_text(194, 162, "R");
 	draw_set_color(c_red);
 	draw_text(194, 178, string(r_factor));

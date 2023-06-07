@@ -25,7 +25,7 @@ for (var i=0;i<array_length(global.dreamlands_items);i++) {
 }
 
 facing_tile_x = x;
-facing_tile_y = y+16;
+facing_tile_y = y+global.tile_size;
 
 switch(global.player_sprite) {
 	case 0:
@@ -149,6 +149,27 @@ gainItem = function(item_index) {
 	array_push(getItems(), reified_item);
 }
 
+removeItem = function(item_index) {
+	item_to_remove = item_index;
+	if item_to_remove = equipped_item.object_index {
+		equipped_item = noone;	
+	}
+	if (hasItem(item_index)) {
+		function itemCheck(element, index) {
+			return element.object_index != item_to_remove;
+		}
+		if global.phase == "REAL WORLD" {
+			var filtered_items = array_filter(realworld_items, itemCheck);
+			realworld_items = filtered_items;
+		} else {	
+			var filtered_items = array_filter(dreamlands_items, itemCheck);
+			dreamlands_items = filtered_items;
+		}
+	} else {
+		show_debug_message("Warning: tried to remove an item the player did not have");
+	}	
+}
+
 hasItem = function(item_index) {
 	has = false;
 	var items = getItems();
@@ -160,8 +181,36 @@ hasItem = function(item_index) {
 	return has;
 }
 
+hasEquipped = function(item_index) {
+	if (equipped_item == noone) {
+		return false;	
+	} else if (equipped_item.object_index == item_index) {
+		return true;
+	} else {
+		return false;	
+	}
+}
+
 gainBP = function(bp_location_index, bp_id_index) {
 	bodyparts[bp_location_index] = bp_id_index;
 	bodyparts_hp[bp_location_index] = 2;
 	obj_dm.postDuelCleanup();
+}
+
+stops = function() {
+	target = instance_place(x,y,obj_permeable_actor);
+	if (target != noone) {
+		with (target) {
+			event_user(2);
+		}
+	}
+}
+
+walks = function() {
+	target = instance_place(x,y,obj_permeable_actor);
+	if (target != noone) {
+		with (target) {
+			event_user(3);
+		}
+	}
 }
