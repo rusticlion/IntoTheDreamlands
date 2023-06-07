@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_esoterica",
+  "name": "obj_item004_blindfold",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -12,7 +12,7 @@
     "path": "folders/Objects/items.yy",
   },
   "parentObjectId": null,
-  "persistent": false,
+  "persistent": true,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_esoterica",
-    "path": "sprites/spr_esoterica/spr_esoterica.yy",
+    "name": "spr_blindfold",
+    "path": "sprites/spr_blindfold/spr_blindfold.yy",
   },
   "spriteMaskId": null,
   "visible": false,

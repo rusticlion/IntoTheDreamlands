@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_shovel",
+  "name": "obj_item001_esoterica",
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
   ],
@@ -12,7 +12,7 @@
     "path": "folders/Objects/items.yy",
   },
   "parentObjectId": null,
-  "persistent": true,
+  "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
   "physicsFriction": 0.2,
@@ -28,8 +28,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_shovel",
-    "path": "sprites/spr_shovel/spr_shovel.yy",
+    "name": "spr_esoterica",
+    "path": "sprites/spr_esoterica/spr_esoterica.yy",
   },
   "spriteMaskId": null,
   "visible": false,

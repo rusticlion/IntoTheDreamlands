@@ -26,6 +26,9 @@ function enterBasement() {
 	if !instance_exists(obj_player) {
 		instance_create_layer(8*global.tile_size, 13*global.tile_size, "BGInstances", obj_player);
 	}
+	if !instance_exists(obj_demon_basement_manager) {
+		instance_create_layer(0,0,"Collision", obj_demon_basement_manager);
+	}
 	obj_player.x = 8*global.tile_size;
 	obj_player.y = 13*global.tile_size;
 

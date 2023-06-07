@@ -149,6 +149,17 @@ gainItem = function(item_index) {
 	array_push(getItems(), reified_item);
 }
 
+hasItem = function(item_index) {
+	has = false;
+	var items = getItems();
+	for(var i=0;i<array_length(items);i++) {
+		if items[i].object_index == item_index {
+			has = true;	
+		}
+	}
+	return has;
+}
+
 gainBP = function(bp_location_index, bp_id_index) {
 	bodyparts[bp_location_index] = bp_id_index;
 	bodyparts_hp[bp_location_index] = 2;

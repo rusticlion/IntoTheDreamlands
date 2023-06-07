@@ -13,7 +13,7 @@ if (dialog_active) {
 			choices: []
 		}
 	);
-} else if (obj_player.equipped_item.object_index == obj_shovel) {
+} else if (obj_player.equipped_item.object_index == obj_item002_shovel) {
 	shovel_active_dialog = instance_create_layer(
 		0,0,"Overlay",
 		obj_dialog,

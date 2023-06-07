@@ -123,9 +123,11 @@ obj_swapper
 
 global.item_index = [
 noone,
-obj_esoterica,
-obj_shovel,
-obj_devils_brush
+obj_item001_esoterica,
+obj_item002_shovel,
+obj_item003_devils_brush,
+obj_item004_blindfold,
+obj_item005_key
 ]
 
 

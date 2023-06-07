@@ -16,7 +16,7 @@ if (!unrevealed) {
 			choices: []
 		}
 	);
-} else if (obj_player.equipped_item.object_index == obj_shovel && !obj_player.moving) {
+} else if (obj_player.equipped_item.object_index == obj_item002_shovel && !obj_player.moving) {
 	show_debug_message("player has shovel and is ready dialog");
 	shovel_active_dialog = instance_create_layer(
 		0,0,"Overlay",

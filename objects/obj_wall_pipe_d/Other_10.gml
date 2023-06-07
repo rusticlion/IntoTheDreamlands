@@ -15,7 +15,7 @@ if (dialog_active) {
 		if (choice == 0) {
 			sprite_index = spr_wall_pipe_porthole;
 			shovel_present = false;
-			obj_player.gainItem(obj_shovel); //add shovel to inventory
+			obj_player.gainItem(obj_item002_shovel); //add shovel to inventory
 			instance_destroy(shovel_discovery_dialog);
 		} else if (choice == 1) {
 			instance_destroy(shovel_discovery_dialog);

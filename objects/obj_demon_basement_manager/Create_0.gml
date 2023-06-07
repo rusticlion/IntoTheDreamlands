@@ -37,7 +37,7 @@
 // Set up spooky spot
 
 // Set up cross
-
+	cross = instance_create_layer(7*global.tile_size,0,"BGInstances",obj_st_andrews_cross)
 // Set up buckets
 
 // Set up desk
