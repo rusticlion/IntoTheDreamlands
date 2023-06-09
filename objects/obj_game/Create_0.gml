@@ -12,10 +12,8 @@ if !window_get_fullscreen()
 window_set_size(480, 320);
 window_set_caption("Into the Dreamlands - Alpha 0.1")
 
-// set up static globals
-global.tile_size = 16;
-global.dreamforms_unlocked = ["BASIC PERSON", "MANTIS SENSEI"];
-global.realworld_items = [];
-global.dreamlands_items = [];
 // randomize or don't
 randomize();
+
+// set up user interface flags
+dialog_active = false;

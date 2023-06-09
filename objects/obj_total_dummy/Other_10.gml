@@ -11,11 +11,11 @@ if (dialog_active) {
 		0,0,"Overlay",
 		obj_dialog,
 		{
-			pages: ["I'm a Total Dummy, designed for you to demonstrate your mastery of attacking!", "Go ahead and hit me - I won't do anything!"],
+			pages: ["I'm a Total Dummy, designed for you to safely try out attacking!", "Go ahead and hit me - I won't do anything!"],
 			choices: ["LET'S GO","NOT NOW"]
 		}
 	);
-	dummy_active_dialog.choiceHandler = function(choice) {
+	dummy_active_dialog.callback = function(choice) {
 		if (choice == 0) {
 			global.duel_parameters = {
 				fight_room: room,

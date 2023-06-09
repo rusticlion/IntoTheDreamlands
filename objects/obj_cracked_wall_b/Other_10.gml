@@ -21,7 +21,7 @@ if (dialog_active) {
 			choices: ["DIG", "NOT NOW"]
 		}
 	);
-	shovel_active_dialog.choiceHandler = function(choice) {
+	shovel_active_dialog.callback = function(choice) {
 		if (choice == 0) {
 			image_index = 1;
 			instance_destroy(shovel_active_dialog);
@@ -34,7 +34,7 @@ if (dialog_active) {
 					choices: ["FIGHT!"]
 				}
 			)
-			bonedemon_attack_dialog.choiceHandler = function(choice) {
+			bonedemon_attack_dialog.callback = function(choice) {
 				if (choice == 0) {
 					global.duel_parameters = {
 						fight_room: room,

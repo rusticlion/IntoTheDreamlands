@@ -8,7 +8,7 @@ phase = "SETUP"; // for game state
 game_view = "home"; //for camera state
 
 player1 = instance_create_layer(0,0,"Pieces",obj_duelist);
-player1.name = "LionBots";
+player1.name = global.playername;
 player2 = instance_create_layer(0,0,"Pieces",obj_ai_duelist);
 foes = ["CHESHIRE LION", "DRAGON", "MANTIS SENSEI", "BONE DEMON", "TREASURE WIGHT", "BONE GARGOYLE", "KRAKEN"];
 player2.name = noone;
@@ -279,8 +279,7 @@ goToCleanup = function() {
 cleanupDuel = function() {
 	obj_player.visible = true;
 	obj_player.unlock();
-	global.duel_parameters.victoryHandler();
-	room_goto(global.duel_parameters.fight_room);
+	obj_combat.endCombat();
 }
 
 goToLoss = function() {

@@ -12,7 +12,7 @@ if (dialog_active) {
 			choices: ["USE WRENCH", "JUST LOOK"]
 		}
 	);
-	wrench_active_dialog.choiceHandler = function(choice) {
+	wrench_active_dialog.callback = function(choice) {
 		if (choice == 0) {
 			sprite_index = spr_debug_duck;
 			open = true;

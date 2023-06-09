@@ -3,6 +3,11 @@
 show_debug_message("Stood on a Permeable Actor (Spooky Spot)");
 if (dialog_active) {
 	
+} else if (obj_player.hasEquipped(obj_item003_devils_brush) && state == "NOT_REVEALED") {
+	// More complicated requirements later
+	// Gotta decide how item metadata persistence will work
+	state = "REVEALED";
+	
 } else {
 	dialog_active = true;
 	var pages_to_show = ["Standing here gives you the heebie-jeebies."];
@@ -25,5 +30,5 @@ if (dialog_active) {
 			choices: ["LEAVE"]
 		}
 	);
-	spooky_spot_dialog.choiceHandler = choiceHandler;
+	spooky_spot_dialog.callback = choiceHandler;
 }

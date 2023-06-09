@@ -30,12 +30,21 @@ options = [
 		}
 	},
 	{
-		option_text: "Endless Battles Mode",
+		option_text: "Random Battles Mode",
 		callback: function() {
 			global.endless_mode = !global.endless_mode;	
 		},
 		getState: function() {
 			return global.endless_mode;
+		}
+	},
+	{
+		option_text: "Dev Mode",
+		callback: function() {
+			global.devmode = !global.devmode;
+		},
+		getState: function() {
+			return global.devmode;	
 		}
 	}
 ];

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 state = "READY";
-hover_text = "Convert factor to dice. Costs no energy"
+hover_text = "Converts Factor to dice as often as you want."
 image_speed = 0;
 pushbuttonEffect = function() {
 	obj_debug_duck.visible = true;

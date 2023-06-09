@@ -48,6 +48,42 @@ evaluate = function() {
 	}
 }
 
+isChecked = function() {
+	if (hp == 0) {
+		return false;
+	} else {
+		var attack_score = attack_slot.power_score;
+		var defense_score = defense_slot.difficulty;
+		
+		if (attack_score > 19) {
+			attack_score = "HYPER";
+		} else if (attack_score > 9) {
+			attack_score = "SUPER";
+		}
+		
+		if (defense_score > 19) {
+			defense_score = "HYPER";
+		} else if (defense_score > 9) {
+			defense_score = "SUPER";
+		}
+		
+		
+		if (defense_score == "HYPER") {
+			return false;
+		} else if (attack_score == "HYPER") {
+			return true;
+		} else if (defense_score == "SUPER") {
+			return false;
+		} else if (attack_score == "SUPER") {
+			return true;
+		} else if (attack_score > defense_score) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}
+
 damage = function() {
 	var dph = 1;
 	if (controller.opponent.active_card.upside.brutal) {

@@ -6,6 +6,8 @@ down = spr_cat_walk_down;
 left = spr_cat_walk_left;
 up = spr_cat_walk_up;
 
+portrait = noone;
+
 ready = true;
 
 // currently taking an action
@@ -21,6 +23,6 @@ cooldown = function(){
 dialog_active = false;
 dialog_pages = ["Default Actor Dialog"];
 dialog_choices = [];
-choiceHandler = function(choice) {
+dialogCallback = function(choice) {
 	show_debug_message($"A debug message from {object_index}")
 }

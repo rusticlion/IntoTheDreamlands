@@ -83,6 +83,11 @@ var default_gadgets = [
 		xx: 2*global.tile_size,
 		yy: 4*global.tile_size,
 		gadget_index: 9
+	},
+	{
+		xx: 3*global.tile_size,
+		yy: 0,
+		gadget_index: 14
 	}
 ];
 equipped_gadgets = loadEquippedGadgetsFromGlobal();

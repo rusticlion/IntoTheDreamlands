@@ -6,4 +6,29 @@ Purpose:
 
 Actors:
 
-	
+	Books:
+		
+		"Instinct and Ego"
+			Topics: Instinct Cards
+		"Metaengineering Foundations"
+			Topics: Energy, Basic Metatool Example (Swapper)
+		
+		"Strike a Blow: Attack Dice"
+		"Staying Alive: Defense Dice""
+		
+		"Heated Moments: the Red factor"
+		"Defensive Dreaming: the Green factor"
+		"Third Eye Tactics: the Blue factor"
+		
+		
+	Classes:
+		"Your Dreamform and You"
+			Topics: Heart Points, Body Parts, Instincts
+		"Intro to Metaengineering"
+			Topics: Swapper
+		"Basic Color Theory"
+			Topics: Meters, Factors, Magic Dice
+		"Applied Color Theory" 
+			* Prerequisite: Intro to Metaengineering
+			Topics: Injectors, Converters
+			

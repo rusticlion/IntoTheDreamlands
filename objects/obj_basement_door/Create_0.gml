@@ -2,6 +2,7 @@
 // You can write your code in this editor
 solid = true;
 dialog_active = false;
+rabbithole_pixels = [];
 
 valid_states = [
 	"LOCKED",

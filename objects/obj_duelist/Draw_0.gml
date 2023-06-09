@@ -21,6 +21,7 @@ if (obj_dm.player1.id == self.id) {
 	draw_healthbar(0, 342, 28, 344, displayed_r, c_black, c_red, c_red, 0, false, false);
 	draw_healthbar(0, 374, 28, 376, displayed_g, c_black, c_lime, c_lime, 0, false, false);
 	draw_healthbar(0, 406, 28, 408, displayed_b, c_black, c_blue, c_blue, 0, false, false);
+	var threat_total = totalThreat();
 	for (var i=0;i<blood;i++) {
 		if (obj_dm.phase == "PLAN") {
 			var board_x_placement = global.tile_size*(9+i), 
@@ -29,7 +30,8 @@ if (obj_dm.player1.id == self.id) {
 		} else {
 			var center_x_placement = global.tile_size*(12+i), 
 			var center_y_placement = global.tile_size*18+global.tile_size/2;
-			draw_sprite(spr_heart_point, i, center_x_placement, center_y_placement)
+			var threat_offset = (i < threat_total) ? 3 : 0;
+			draw_sprite(spr_heart_point, i+threat_offset, center_x_placement, center_y_placement)
 		}
 	}
 	draw_text(2, 289, "R");
@@ -44,12 +46,14 @@ if (obj_dm.player1.id == self.id) {
 	draw_set_color(c_blue);
 	draw_text(34, 305, string(b_factor));
 	
-	draw_set_color(c_white);
-	draw_text(48, 400, string(energy));
+	for(var i=0;i<energy;i++) {
+		draw_sprite(spr_energy, 0, global.tile_size*3+i*global.tile_size, global.tile_size*25) 	
+	}
 } else {
 	draw_healthbar(239, 86, 179, 88, r_factor*50, c_black, c_red, c_red, 0, false, false);
 	draw_healthbar(239, 118, 179, 120, g_factor*50, c_black, c_lime, c_lime, 0, false, false);
 	draw_healthbar(239, 150, 179, 152, b_factor*50, c_black, c_blue, c_blue, 0, false, false);
+	var threat_total = totalThreat();
 	for (var i=0;i<blood;i++) {
 		if (obj_dm.phase == "PLAN") {
 			var board_x_placement = global.tile_size*(3+i), 
@@ -58,7 +62,8 @@ if (obj_dm.player1.id == self.id) {
 		} else {
 			var center_x_placement = global.tile_size*i, 
 			var center_y_placement = global.tile_size*10+global.tile_size/2;
-			draw_sprite(spr_heart_point, i, center_x_placement, center_y_placement)
+			var threat_offset = (i < threat_total) ? 3 : 0;
+			draw_sprite(spr_heart_point, i+threat_offset, center_x_placement, center_y_placement)
 		}
 	}
 	draw_text(194, 162, "R");
@@ -72,4 +77,6 @@ if (obj_dm.player1.id == self.id) {
 	draw_text(226, 162, "B");
 	draw_set_color(c_blue);
 	draw_text(226, 178, string(b_factor));
+	
+	// draw energy if we ever make it possible to watch AI spend it
 }

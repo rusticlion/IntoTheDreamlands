@@ -16,6 +16,7 @@ endpoint = array_length(pages)-1;
 show_blinker = false;
 show_choices = false;
 choice_cursor = 0;
+portrait = noone;
 
 typewriterProgress = 0;
 
@@ -42,8 +43,8 @@ if (cursor < endpoint) {
 	alarm[0] = 10;
 }
 
-choiceHandler = function(choice) {
-	show_debug_message("Finished a choice but no handler assigned!"+string(choice));
+callback = function(choice=0) {
+	show_debug_message("Closed a dialog box with no other effect.");	
 }
 
 show_debug_message("spawned a dialog box starting with: "+pages[0]);

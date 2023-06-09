@@ -16,7 +16,7 @@ if (dialog_active) {
 						choices: ["CUT", "NOT NOW"]
 					}
 				);
-				cut_chain_dialog.choiceHandler = function(choice) {
+				cut_chain_dialog.callback = function(choice) {
 					switch(choice) {
 						case 0:
 							state = valid_states[1];
@@ -70,7 +70,7 @@ if (dialog_active) {
 					choices: ["TAKE IT", "LEAVE IT"]
 				}
 			);
-			key_discovery_dialog.choiceHandler = function(choice) {
+			key_discovery_dialog.callback = function(choice) {
 				if (choice == 0) {
 					state = valid_states[2];
 					obj_player.gainItem(obj_item005_key); //add key to inventory

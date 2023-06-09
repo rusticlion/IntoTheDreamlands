@@ -13,7 +13,7 @@ getDice = function(controller = noone) {
 }
 
 checkFlipCondition = function(card) {
-	if (card.controller.r_factor > 0) {
+	if (card.controller.decision == "L") {
 		with(card){
 			event_user(0);
 		}

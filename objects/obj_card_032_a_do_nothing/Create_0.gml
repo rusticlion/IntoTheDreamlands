@@ -5,3 +5,7 @@ getDice = function(controller = noone) {
 	var pool = [];
 	return pool;
 }
+
+checkFlipCondition = function(card) {
+	return false;
+}

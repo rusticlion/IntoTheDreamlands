@@ -14,7 +14,7 @@ if (dialog_active) {
 			choices: ["TAKE IT", "LEAVE IT"]
 		}
 	);
-	cutters_discovery_dialog.choiceHandler = function(choice) {
+	cutters_discovery_dialog.callback = function(choice) {
 		if (choice == 0) {
 			cutters_present = false;
 			obj_player.gainItem(obj_item007_bolt_cutters); //add cutters to inventory

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 event_inherited();
 state = "UNPUSHED";
-hover_text = "Injectors work once per turn."
+hover_text = "A metatool for generating Factor."
 image_speed = 0;
 
 injectorEffect = function() {

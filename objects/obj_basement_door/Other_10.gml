@@ -17,7 +17,7 @@ if (dialog_active) {
 						choices: ["YES", "NO"]
 					}
 				);
-				key_active_dialog.choiceHandler = function(choice) {
+				key_active_dialog.callback = function(choice) {
 					if (choice == 0) {
 						state = valid_states[1];
 						image_index = 1;
@@ -32,6 +32,7 @@ if (dialog_active) {
 							}
 						)
 						murderer = instance_create_layer(x,y+global.tile_size*2,"BGInstances",obj_murderer);
+						murderer.murdererAttacks();
 					} else if (choice == 1) {
 						instance_destroy(key_active_dialog);
 					} else {

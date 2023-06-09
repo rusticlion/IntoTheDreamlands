@@ -26,7 +26,7 @@ if (!unrevealed) {
 			choices: ["DIG", "NOT NOW"]
 		}
 	);
-	shovel_active_dialog.choiceHandler = function(choice) {
+	shovel_active_dialog.callback = function(choice) {
 		if (choice == 0) {
 			image_index = 1;
 			solid = false;

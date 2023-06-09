@@ -9,6 +9,7 @@ side_a = instance_create_layer(0,0, "Overlay", obj_card_032_a_do_nothing);
 side_b = instance_create_layer(0,0, "Overlay", obj_card_032_a_do_nothing);
 
 upside = side_a;
+show_debug_message("set upside on an instance of card 32 (Nothing Doing)")
 
 hover_text_a = "Entirely inanimate.";
 hover_text_b = hover_text_a;

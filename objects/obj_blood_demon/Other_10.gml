@@ -15,7 +15,7 @@ if (dialog_active) {
 			choices: ["FIGHT!"]
 		}
 	);
-	demon_active_dialog.choiceHandler = function(choice) {
+	demon_active_dialog.callback = function(choice) {
 		if (choice == 0) {
 			global.duel_parameters = {
 				fight_room: room,

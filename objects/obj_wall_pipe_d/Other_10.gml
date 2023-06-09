@@ -11,7 +11,7 @@ if (dialog_active) {
 			choices: ["TAKE IT", "JUST LOOK"]
 		}
 	);
-	shovel_discovery_dialog.choiceHandler = function(choice) {
+	shovel_discovery_dialog.callback = function(choice) {
 		if (choice == 0) {
 			sprite_index = spr_wall_pipe_porthole;
 			shovel_present = false;

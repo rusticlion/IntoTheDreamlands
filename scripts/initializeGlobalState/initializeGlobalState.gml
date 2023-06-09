@@ -118,7 +118,8 @@ obj_blue_pushbutton,
 obj_red_catalyst_crystal,
 obj_green_catalyst_crystal,
 obj_blue_catalyst_crystal,
-obj_swapper
+obj_swapper,
+obj_decision_lever
 ]
 
 global.item_index = [
@@ -146,5 +147,9 @@ global.duel_parameters = {
 global.endless_mode = false;
 global.mouse_enabled = true;
 global.fullscreen = false;
-
 global.devmode = true; // convenience features for bypassing puzzles
+
+global.tile_size = 16;
+global.dreamforms_unlocked = ["BASIC PERSON", "MANTIS SENSEI"];
+global.realworld_items = [];
+global.dreamlands_items = [];

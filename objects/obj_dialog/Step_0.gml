@@ -7,26 +7,30 @@ if (currentTextAnimating) {
 	++typewriterProgress;	
 }
 
-if (show_choices && keyboard_check_released(ord("Z"))) {
-	choiceHandler(choice_cursor);
-	instance_destroy();
-} else if (!show_choices && keyboard_check_released(ord("Z"))) {
-    // If there is more of the current text, skip to the end
-    if (currentTextAnimating) {
-		typewriterProgress = pageLength;
-    }
-    // Otherwise, advance to the next page if there is more to show, self-destruct otherwise
-    else {
-        if (cursor < endpoint) {
-            typewriterProgress = 0;
+if keyboard_check_released(ord("Z")) {
+	var debug_message = "Got a click in dialog:";
+	if currentTextAnimating {
+		debug_message += " Skipped typewriter forward.";
+		typewriterProgress = pageLength;	
+	} else {
+		debug_message += " Typing finished:"
+		if (cursor < endpoint) {
+			debug_message += " Next page.";
+			typewriterProgress = 0;
 			cursor++;
-        } else if (has_choices){
-			show_choices = true;
-        } else {
-			// complete non-choice box
+		} else if (has_choices && !show_choices) {
+			debug_message += " Showing choices.";
+			show_choices = true;	
+		} else {
+			debug_message += " Made a choice or got to end, firing callback and closing dialog";
+			if instance_number(obj_dialog) == 1 {
+				obj_game.dialog_active = false;
+			}
+			callback(choice_cursor);
 			instance_destroy();
-		}
-    }
+		} 
+	}
+	show_debug_message(debug_message);
 } else if (keyboard_check_released(vk_up)){
 	choice_cursor = clamp(choice_cursor-1,0,array_length(choices)-1)
 } else if (keyboard_check_released(vk_down)) {

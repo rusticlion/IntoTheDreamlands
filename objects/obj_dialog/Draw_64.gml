@@ -5,7 +5,7 @@ draw_set_color(c_black);
 draw_set_font(KenneyMini)
 
 draw_text_ext(
-	x+global.tile_size*3,
+	x+global.tile_size*3-1,
 	y+2,
 	string_copy(pages[cursor], 1, typewriterProgress),
 	16,
@@ -29,4 +29,8 @@ if (show_choices) {
 		choice_text = (choice_cursor==i) ? ">"+this_choice : this_choice;
 		draw_text(9*global.tile_size+1, y+global.tile_size*(i-3)+2, choice_text);
 	}
+}
+
+if (portrait != noone) {
+	draw_sprite(portrait, 0, x+4, y+4);
 }

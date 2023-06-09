@@ -6,6 +6,7 @@
 r_factor = 0;
 g_factor = 0;
 b_factor = 0;
+decision = "L";
 
 displayed_r = r_factor;
 displayed_g = g_factor;
@@ -256,6 +257,25 @@ doomed = function() {
 			}
 		}
 	return result;
+}
+
+toggleDecision = function() {
+	if decision = "L" {
+		decision = "R";	
+	} else {
+		decision = "L";	
+	}
+}
+
+totalThreat = function() {
+	var total = 0;
+	for(var i=0;i<array_length(bodyparts);i++) {
+		var bp = bodyparts[i];
+		if bp.isChecked() && bp.hp == 1 { // or the attack is Brutal, i suppose
+			total += bp.blood_value;
+		}
+	}
+	return total;
 }
 
 // note, this does not reflect "heart points"

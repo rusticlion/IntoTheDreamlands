@@ -1,6 +1,6 @@
 /// @description Overlay character elements
 // You can write your code in this editor
-if !instance_exists(obj_pause_menu) {
+if !instance_exists(obj_pause_menu) && !instance_exists(obj_wakeup_manager) {
 	var item_sprite = spr_empty;
 	if equipped_item != noone {
 		item_sprite = equipped_item.sprite_index;	
