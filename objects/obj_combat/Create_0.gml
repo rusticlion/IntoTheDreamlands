@@ -15,6 +15,7 @@ startCombat = function() {
 
 endCombat = function() {
 	state = valid_states[2];
+	show_debug_message("combat concluded, headed back to overworld");
 	room_goto(originating_room);	
 }
 

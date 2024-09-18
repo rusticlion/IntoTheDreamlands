@@ -42,10 +42,10 @@
     {"name":"ui","order":27,"path":"folders/Sprites/ui.yy",},
     {"name":"world","order":23,"path":"folders/Sprites/world.yy",},
     {"name":"DemonBasement","order":8,"path":"folders/Sprites/world/DemonBasement.yy",},
+    {"name":"portraits","order":11,"path":"folders/Sprites/world/portraits.yy",},
     {"name":"School","order":10,"path":"folders/Sprites/world/School.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"portraits","order":11,"path":"folders/Sprites/world/portraits.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"obj_card_041_buzz_cut","order":80,"path":"objects/obj_card_041_buzz_cut/obj_card_041_buzz_cut.yy",},

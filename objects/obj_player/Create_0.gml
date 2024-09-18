@@ -199,6 +199,7 @@ hasEquipped = function(item_index) {
 gainBP = function(bp_location_index, bp_id_index) {
 	bodyparts[bp_location_index] = bp_id_index;
 	bodyparts_hp[bp_location_index] = 2;
+	show_debug_message("Got to Gain BP method");
 	obj_dm.postDuelCleanup();
 }
 

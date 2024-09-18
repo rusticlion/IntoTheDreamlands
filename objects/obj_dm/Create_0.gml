@@ -277,6 +277,7 @@ goToCleanup = function() {
 }
 
 cleanupDuel = function() {
+	show_debug_message("Cleaning up duel...")
 	obj_player.visible = true;
 	obj_player.unlock();
 	obj_combat.endCombat();

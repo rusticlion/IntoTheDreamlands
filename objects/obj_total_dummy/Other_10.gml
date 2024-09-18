@@ -22,7 +22,8 @@ if (dialog_active) {
 				enemy_duelist: "TOTAL DUMMY",
 				victoryHandler: victoryHandler
 			};
-			room_goto(Duel);
+			combat_manager = instance_create_layer(0,0,"Overlay", obj_combat);
+			combat_manager.startCombat();
 		} else if (choice == 1) {
 			// dialog to point towards bookshelves
 		} else {
